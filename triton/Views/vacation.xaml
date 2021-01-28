@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:triton.ViewModels"
+             x:Class="triton.Views.vacation">
+    <!--<ContentPage.BindingContext>
+        <local:VacationViewModel/>
+    </ContentPage.BindingContext>-->
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#137CA9" Padding="24" CornerRadius="0">
+                <Label Text="HR Portalen" HorizontalTextAlignment="Center" TextColor="White" FontSize="25"/>
+            </Frame>
+            <Label Text="{Binding Title}" FontSize="22" Padding="30,10,30,10"/>
+
+            <WebView Source="http://www.vg.no" BackgroundColor="AliceBlue" WidthRequest="300" HeightRequest="300" />
+
+
+            <Label Text="benny"></Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
