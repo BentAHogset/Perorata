@@ -15,7 +15,6 @@ namespace triton.ViewModels
 
         public VacationViewModel(IVacationProvider provider)
         {
-            //vacationService = new VacationService();
             vacationProvider = provider;
             vacationModel = vacationProvider.GetModel();
         }
