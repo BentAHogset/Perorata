@@ -23,12 +23,15 @@
 
             <WebView Source="http://www.vg.no" BackgroundColor="AliceBlue" WidthRequest="300" HeightRequest="300" />
 
-
-            <Label Text="benny"></Label>
-
-            <local:BgButton ButtonText="Lagre"></local:BgButton>
+            <local:BgButton ButtonText="Lagre" Command=""></local:BgButton>
+            
+            <local:BgButton ButtonText="Neste"></local:BgButton>
 
             <local:BgButton ButtonText="Slett"></local:BgButton>
+
+            <local:BgButton ButtonText="Avbryt"></local:BgButton>
+
+            <Label Text="benny"></Label>
 
         </StackLayout>
     </ContentPage.Content>
