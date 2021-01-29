@@ -12,7 +12,11 @@
             <Frame BackgroundColor="#137CA9" Padding="24" CornerRadius="0">
                 <Label Text="HR Portalen" HorizontalTextAlignment="Center" TextColor="White" FontSize="25"/>
             </Frame>
-            <Label Text="{Binding Title}" FontSize="22" Padding="30,10,30,10"/>
+            <Label x:Name="title" Text="{Binding Model.Title}" FontSize="22" Padding="30,10,30,10"/>
+
+            <Entry x:Name="comment" Text="{Binding Model.Comment}"/>
+
+            <Button x:Name="save" Text="Lagre" Command="{Binding SaveCommand}"/>
 
             <WebView Source="http://www.vg.no" BackgroundColor="AliceBlue" WidthRequest="300" HeightRequest="300" />
 

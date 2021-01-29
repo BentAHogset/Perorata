@@ -2,58 +2,35 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Windows.Input;
 using triton.Models;
 using triton.Providers;
 using triton.Services;
+using Xamarin.Forms;
 
 namespace triton.ViewModels
 {
     public class VacationViewModel: ViewModelBase  //: INotifyPropertyChanged
     {
         private readonly IVacationProvider vacationProvider;
-        private readonly VacationModel vacationModel;
+      
 
-        public VacationViewModel(IVacationProvider provider)
+        public Command SaveCommand { get; set; }
+
+        public VacationViewModel(IVacationProvider vacationProvider)
         {
-            vacationProvider = provider;
-            vacationModel = vacationProvider.GetModel();
-        }
-
-        //public VacationViewModel(IVacationService service)
-        //{
-        //    vacationService = service;
-        //    vacationModel = vacationService.GetVacationModel(0);
-        //}
-
-        public string Title
-        {
-            get
+            this.vacationProvider = vacationProvider;
+            Model = this.vacationProvider.GetModel();
+            
+            SaveCommand = new Command(() =>
             {
-                return vacationModel.Title;
-            }
-            set
-            {
-                vacationModel.Title = value;
-            }
-
+                Model.Comment = "";
+                Model.Title = "Kommentaren er slettet";
+            });
+            
         }
-
-
-
-        //public event PropertyChangedEventHandler PropertyChanged;
-
-        //private string title;
-        //public string Title
-        //{ get
-        //    {
-        //        return title;
-        //    }
-        //    set
-        //    {
-        //        title = value;
-        //        var args = new PropertyChangedEventArgs(nameof(Title));
-        //        PropertyChanged?.Invoke(this, args);
-        //    }
-        //}
+      
+        public VacationModel Model { get; set; }
+        
     }
 }

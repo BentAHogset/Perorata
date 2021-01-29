@@ -16,13 +16,13 @@ namespace triton.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class vacation : ContentPage
     {
-       
+
         public vacation()
         {
             InitializeComponent();
 
             var vacationProvider = App.Kernel.Get<IVacationProvider>();
-            BindingContext = new VacationViewModel(vacationProvider); 
+            BindingContext = new VacationViewModel(vacationProvider);
         }
     }
 }

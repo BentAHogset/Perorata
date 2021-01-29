@@ -12,7 +12,8 @@ namespace triton.Services
         {
             var model = new VacationModel
             {
-                Title = "Sommerferie 2020"
+                Title = "Sommerferie 2020",
+                Comment="Må ta ut 8 uker ferie, selv om jeg kun har 4 tilgjengelig. 4 uker i forskudd!"
             };
             return model;
         }
