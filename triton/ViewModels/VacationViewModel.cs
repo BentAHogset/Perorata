@@ -10,7 +10,7 @@ using Xamarin.Forms;
 
 namespace triton.ViewModels
 {
-    public class VacationViewModel: ViewModelBase  //: INotifyPropertyChanged
+    public class VacationViewModel: ViewModelBase
     {
         private readonly IVacationProvider vacationProvider;
       

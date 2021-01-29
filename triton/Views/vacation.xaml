@@ -1,8 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:triton.ViewModels"
+             xmlns:local ="clr-namespace:triton.Controls"
              x:Class="triton.Views.vacation">
+
+    <!--xmlns:local="clr-namespace:triton.ViewModels"-->
+    
     <!--<ContentPage.BindingContext>
         <local:VacationViewModel/>
     </ContentPage.BindingContext>-->
@@ -22,6 +25,11 @@
 
 
             <Label Text="benny"></Label>
+
+            <local:BgButton ButtonText="Lagre"></local:BgButton>
+
+            <local:BgButton ButtonText="Slett"></local:BgButton>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

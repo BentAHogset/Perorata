@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="triton.Controls.BgButton">
+  <ContentView.Content>
+    <Frame BackgroundColor="Azure">
+        <StackLayout Orientation="Horizontal">
+                <Button x:Name="customButton" WidthRequest="328" HeightRequest="48"  FontFamily="Open Sans" FontSize="17" TextColor="white" BackgroundColor="#007ACA" CornerRadius="10" FontAttributes="Bold"/>
+            </StackLayout>
+    </Frame>
+  </ContentView.Content>
+</ContentView>
