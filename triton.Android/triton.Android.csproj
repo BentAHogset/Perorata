@@ -85,7 +85,6 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\triton\triton.csproj">
       <Project>{F1043E54-F747-464E-AE6B-6084C50102DB}</Project>

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="triton.Controls.BgButton">
   <ContentView.Content>
-    <Frame BackgroundColor="Azure">
+    <Frame>
         <StackLayout Orientation="Horizontal">
                 <Button x:Name="customButton" 
                         WidthRequest="328"
