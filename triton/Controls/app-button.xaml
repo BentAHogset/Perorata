@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="triton.Controls.app_button">
+    <ContentView.Content>
+        
+            <StackLayout Orientation="Vertical">
+
+                    <ImageButton x:Name="appButton" 
+                        WidthRequest="124"
+                        HeightRequest="124"
+                        Margin="40,10,40,10"    
+                        BackgroundColor="#27546d" 
+                        CornerRadius="10" 
+                        Command="{Binding Command}"
+                        CommandParameter="{Binding CommandParameter}"
+                        Source=""/>
+
+                    <Label x:Name="lblButton" 
+                        HorizontalTextAlignment="Center"
+                        FontAttributes="Bold" 
+                        FontFamily="Open Sans" 
+                        FontSize="17"
+                        TextColor="Black">
+                    </Label>
+                
+            </StackLayout>
+    </ContentView.Content>
+</ContentView>
