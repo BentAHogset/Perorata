@@ -11,28 +11,39 @@
     </ContentPage.BindingContext>-->
 
     <ContentPage.Content>
-        <StackLayout>
-            <Frame BackgroundColor="#137CA9" Padding="24" CornerRadius="0">
-                <Label Text="HR Portalen" HorizontalTextAlignment="Center" TextColor="White" FontSize="25"/>
-            </Frame>
-            <Label x:Name="title" Text="{Binding Model.Title}" FontSize="22" Padding="30,10,30,10"/>
 
-            <Entry x:Name="comment" Text="{Binding Model.Comment}"/>
+        <ScrollView 
+                 x:Name="ScoreScrollView" Orientation="Vertical"
+                            VerticalOptions="FillAndExpand"
+                            VerticalScrollBarVisibility="Default" 
+                            BackgroundColor="White">
 
-            <Button x:Name="save" Text="Lagre" Command="{Binding SaveCommand}"/>
+            <StackLayout VerticalOptions="FillAndExpand">
+                <Frame BackgroundColor="#137CA9" Padding="24" CornerRadius="0">
+                    <Label Text="HR Portalen" HorizontalTextAlignment="Center" TextColor="White" FontSize="25"/>
+                </Frame>
 
-            <WebView Source="http://www.vg.no" BackgroundColor="AliceBlue" WidthRequest="300" HeightRequest="300" />
 
-            <local:BgButton ButtonText="Lagre" Command=""></local:BgButton>
-            
-            <local:BgButton ButtonText="Neste"></local:BgButton>
 
-            <local:BgButton ButtonText="Slett"></local:BgButton>
+                <Label x:Name="title" Text="{Binding Model.Title}" FontSize="22" Padding="30,10,30,10"/>
 
-            <local:BgButton ButtonText="Avbryt"></local:BgButton>
+                <Entry x:Name="comment" Text="{Binding Model.Comment}"/>
 
-            <Label Text="benny"></Label>
+                <Button x:Name="save" Text="Lagre" Command="{Binding SaveCommand}"/>
 
-        </StackLayout>
+                <local:BgButton ButtonText="Lagre" Command="{Binding SaveCommand}" CommandParameter="{Binding .}"></local:BgButton>
+
+                <local:BgButton ButtonText="Neste" Command="{Binding NextCommand}" CommandParameter="{Binding .}"></local:BgButton>
+
+                <local:BgButton ButtonText="Slett" Command="{Binding DeleteCommand}" CommandParameter="{Binding .}"></local:BgButton>
+
+                <local:BgButton ButtonText="Avbryt" Command="{Binding CancelCommand}" CommandParameter="{Binding .}"></local:BgButton>
+
+                <Label Text="benny"></Label>
+
+                <WebView Source="http://www.vg.no" BackgroundColor="AliceBlue" WidthRequest="300" HeightRequest="300" />
+            </StackLayout>
+
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

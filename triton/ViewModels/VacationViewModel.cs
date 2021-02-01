@@ -15,7 +15,10 @@ namespace triton.ViewModels
         private readonly IVacationProvider vacationProvider;
       
 
-        public Command SaveCommand { get; set; }
+        public ICommand SaveCommand { get; set; }
+        public ICommand DeleteCommand { get; set; }
+        public ICommand CancelCommand { get; set; }
+        public ICommand NextCommand { get; set; }
 
         public VacationViewModel(IVacationProvider vacationProvider)
         {
@@ -24,10 +27,28 @@ namespace triton.ViewModels
             
             SaveCommand = new Command(() =>
             {
+                //Model.Comment = "";
+                Model.Title = "Kommentaren er lagret";
+            });
+
+            DeleteCommand = new Command(() =>
+            {
                 Model.Comment = "";
                 Model.Title = "Kommentaren er slettet";
             });
-            
+
+            CancelCommand = new Command(() =>
+            {
+                //Model.Comment = "";
+                Model.Title = "Handlingen er avbrutt";
+            });
+
+            NextCommand = new Command(() =>
+            {
+                //Model.Comment = "";
+                Model.Title = "Neste er klikket";
+            });
+
         }
       
         public VacationModel Model { get; set; }

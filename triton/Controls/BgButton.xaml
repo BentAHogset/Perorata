@@ -5,7 +5,17 @@
   <ContentView.Content>
     <Frame BackgroundColor="Azure">
         <StackLayout Orientation="Horizontal">
-                <Button x:Name="customButton" WidthRequest="328" HeightRequest="48"  FontFamily="Open Sans" FontSize="17" TextColor="white" BackgroundColor="#007ACA" CornerRadius="10" FontAttributes="Bold"/>
+                <Button x:Name="customButton" 
+                        WidthRequest="328"
+                        HeightRequest="48"
+                        FontFamily="Open Sans"
+                        FontSize="17"
+                        TextColor="white" 
+                        BackgroundColor="#007ACA" 
+                        CornerRadius="10" 
+                        FontAttributes="Bold" 
+                        Command="{Binding Command}"
+                        CommandParameter="{Binding CommandParameter}"/>
             </StackLayout>
     </Frame>
   </ContentView.Content>
