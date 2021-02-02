@@ -11,7 +11,7 @@ using triton.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace triton.Views
+namespace triton.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class vacation : ContentPage

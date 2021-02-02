@@ -1,6 +1,7 @@
 ﻿using Ninject;
 using System;
 using triton.Kernels;
+using triton.Pages;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -22,7 +23,7 @@ namespace triton
 
 
             //MainPage = new MainPage();
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new main());
 
 
         }

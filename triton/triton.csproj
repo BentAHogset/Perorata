@@ -17,22 +17,28 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Controls\BgButton.xaml.cs">
+    <Compile Update="Views\Controls\BgButton.xaml.cs">
       <DependentUpon>BgButton.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\vacation.xaml.cs">
+    <Compile Update="Pages\vacation.xaml.cs">
       <DependentUpon>vacation.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Controls\app-button.xaml">
+    <EmbeddedResource Update="Views\Controls\app-button.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Controls\BgButton.xaml">
+    <EmbeddedResource Update="Views\Controls\BgButton.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\vacation.xaml">
+    <EmbeddedResource Update="Pages\main.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\testview.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\vacation.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

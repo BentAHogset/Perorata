@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using triton.Pages;
-using Xamarin.Forms;
 
-namespace triton
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace triton.Pages
 {
-    public partial class MainPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class main : ContentPage
     {
-        public MainPage()
+        public main()
         {
             InitializeComponent();
         }
-
 
         private void Vacation_Clicked(object sender, EventArgs e)
         {

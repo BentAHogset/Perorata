@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local ="clr-namespace:triton.Views.Controls"
+             x:Class="triton.Pages.main"
+             
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Padding>
+        <OnPlatform 
+            x:TypeArguments="Thickness"
+            Android ="0,0,0,0" 
+            iOS="0,20,0,0" >
+        </OnPlatform>
+    </ContentPage.Padding>
+
+    <ScrollView 
+                 x:Name="ScoreScrollView" Orientation="Vertical"
+                            VerticalOptions="FillAndExpand"
+                            VerticalScrollBarVisibility="Default" 
+                            BackgroundColor="White">
+
+        <StackLayout BackgroundColor="#D9DCDE">
+            <StackLayout BackgroundColor="#0071BD" HeightRequest="316" WidthRequest="375" >
+
+            <StackLayout WidthRequest="375" HeightRequest="40" Margin="56,50,56,100" >
+                <Label Text="BG Mobil" TextColor="white" FontSize="38" FontAttributes="Bold" FontFamily="Open Sans" HorizontalOptions="Center" Opacity="100" />
+            </StackLayout>
+
+            <StackLayout >
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="168"/>
+                            <RowDefinition Height="82"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                        <ColumnDefinition  Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                                                
+                        <Frame Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" BackgroundColor="White" HasShadow="true" CornerRadius="5" Margin="68,10" BorderColor="Azure" HeightRequest="250">
+                        <StackLayout VerticalOptions="EndAndExpand">
+                            <Label Text="Min Profil" HorizontalOptions="Center" FontFamily="Open Sans" FontSize="16" FontAttributes="Bold" TextColor="#163E59" Padding="10,10"></Label>
+                            <Label Text="Bent A. Høgset" HorizontalOptions="Center" FontFamily="Open Sans" FontSize="12" FontAttributes="Bold" TextColor="#252626"></Label>
+                            <Label Text="System developer / 100%" HorizontalOptions="Center"  FontFamily="Open Sans" FontSize="12"  TextColor="#252626"></Label>
+                            <Label Text="Visma Enterprise" HorizontalOptions="Center"  FontFamily="Open Sans" FontSize="12" TextColor="#252626"></Label>
+                        </StackLayout>
+                        </Frame>
+                        <Image VerticalOptions="Start" HorizontalOptions="Center" Grid.Row="0" Grid.Column="0"  Source="user" HeightRequest="168" WidthRequest="168" Margin="48,-45"/>
+                </Grid>
+                </StackLayout>
+
+
+                <!--<StackLayout WidthRequest="248" HeightRequest="250" BackgroundColor="white" VerticalOptions="FillAndExpand" Margin="68,30,68,20" >
+
+                        <StackLayout VerticalOptions="StartAndExpand"  Margin="48,-45">
+                            <Image Aspect="AspectFit" Source="user" WidthRequest="168" HeightRequest="160"></Image>
+                        </StackLayout>
+
+                    
+                        <StackLayout VerticalOptions="EndAndExpand" Margin="0,20">
+                            <Label Text="Min Profil" HorizontalOptions="Center" FontFamily="Open Sans" FontSize="16" FontAttributes="Bold" TextColor="#163E59" Padding="10,10"></Label>
+                            <Label Text="Bent A. Høgset" HorizontalOptions="Center" FontFamily="Open Sans" FontSize="12" FontAttributes="Bold" TextColor="#252626"></Label>
+                            <Label Text="System developer / 100%" HorizontalOptions="Center"  FontFamily="Open Sans" FontSize="12"  TextColor="#252626"></Label>
+                            <Label Text="Visma Enterprise" HorizontalOptions="Center"  FontFamily="Open Sans" FontSize="12" TextColor="#252626"></Label>
+                        </StackLayout>
+                </StackLayout>-->
+ 
+                <StackLayout Orientation="Horizontal">
+                <local:app_button LabelText="Vacation"></local:app_button>
+                <local:app_button LabelText="Holiday"></local:app_button>
+            </StackLayout>
+
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

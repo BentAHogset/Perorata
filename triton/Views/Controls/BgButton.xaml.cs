@@ -8,7 +8,7 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace triton.Controls
+namespace triton.Views.Controls
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BgButton : ContentView
