@@ -12,17 +12,17 @@ namespace triton.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class main : ContentPage
     {
-        public ICommand ClickVacation;
+        //public ICommand ClickVacation;
 
         public main()
         {
             InitializeComponent();
             
 
-            ClickVacation = new Command(() =>
-            {
-                Navigation.PushAsync(new vacation());
-            });
+            //ClickVacation = new Command(() =>
+            //{
+            //    Navigation.PushAsync(new vacation());
+            //});
         }
 
         private void Vacation_Clicked(object sender, EventArgs e)
@@ -30,6 +30,15 @@ namespace triton.Pages
 
             Navigation.PushAsync(new vacation());
         }
-        
+
+        private void Absence_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new absence());
+        }
+
+        private void User_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new userprofile());
+        }
     }
 }
