@@ -32,7 +32,7 @@
 
                 <Button x:Name="save" Text="Lagre" Command="{Binding SaveCommand}"/>
                 
-                <local:BgButton ButtonText="Lukk" Command="{Binding PreviousCommand}" CommandParameter="{Binding .}"></local:BgButton>
+                <local:BgButton ButtonText="Lukk" Command="{Binding CloseCommand}" CommandParameter="{Binding .}"></local:BgButton>
 
                 <local:BgButton ButtonText="Lagre" Command="{Binding SaveCommand}" CommandParameter="{Binding .}"></local:BgButton>
 
