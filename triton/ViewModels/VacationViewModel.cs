@@ -20,8 +20,16 @@ namespace triton.ViewModels
         public ICommand CancelCommand { get; set; }
         public ICommand NextCommand { get; set; }
 
+        public ICommand CloseCommand { get; set; }
+        public INavigation Navigate;
+
+
+
         public VacationViewModel(IVacationProvider vacationProvider)
         {
+
+            Navigate = Application.Current.MainPage.Navigation;
+
             this.vacationProvider = vacationProvider;
             Model = this.vacationProvider.GetModel();
             
@@ -49,6 +57,11 @@ namespace triton.ViewModels
                 Model.Title = "Neste er klikket";
             });
 
+
+            CloseCommand = new Command(() =>
+            {
+                Navigate.PopAsync();
+            });
         }
       
         public VacationModel Model { get; set; }

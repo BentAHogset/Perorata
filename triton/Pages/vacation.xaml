@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local ="clr-namespace:triton.Views.Controls"
-             x:Class="triton.Pages.vacation">
+             x:Class="triton.Pages.vacation"
+             NavigationPage.HasNavigationBar="False">
 
     <!--xmlns:local="clr-namespace:triton.ViewModels"-->
     
@@ -30,6 +31,8 @@
                 <Entry x:Name="comment" Text="{Binding Model.Comment}"/>
 
                 <Button x:Name="save" Text="Lagre" Command="{Binding SaveCommand}"/>
+                
+                <local:BgButton ButtonText="Lukk" Command="{Binding PreviousCommand}" CommandParameter="{Binding .}"></local:BgButton>
 
                 <local:BgButton ButtonText="Lagre" Command="{Binding SaveCommand}" CommandParameter="{Binding .}"></local:BgButton>
 
@@ -38,6 +41,8 @@
                 <local:BgButton ButtonText="Slett" Command="{Binding DeleteCommand}" CommandParameter="{Binding .}"></local:BgButton>
 
                 <local:BgButton ButtonText="Avbryt" Command="{Binding CancelCommand}" CommandParameter="{Binding .}"></local:BgButton>
+
+                
 
                 <Label Text="benny"></Label>
 
