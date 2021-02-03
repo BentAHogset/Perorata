@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local ="clr-namespace:triton.Views.Controls"
              x:Class="triton.Pages.main"
-             
+             x:Name="mainPage"
              NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Padding>
@@ -14,64 +14,141 @@
         </OnPlatform>
     </ContentPage.Padding>
 
-    <ScrollView 
-                 x:Name="ScoreScrollView" Orientation="Vertical"
-                            VerticalOptions="FillAndExpand"
-                            VerticalScrollBarVisibility="Default" 
-                            BackgroundColor="White">
+    <ContentPage.Content>
+        <ScrollView x:Name="scrollview_main" Orientation="Vertical" VerticalOptions="FillAndExpand"  VerticalScrollBarVisibility="Default" BackgroundColor="White">
 
-        <StackLayout BackgroundColor="#D9DCDE">
-            <StackLayout BackgroundColor="#0071BD" HeightRequest="316" WidthRequest="375" >
+            <StackLayout BackgroundColor="#D9DCDE" VerticalOptions="Fill">
 
-            <StackLayout WidthRequest="375" HeightRequest="40" Margin="56,50,56,100" >
-                <Label Text="BG Mobil" TextColor="white" FontSize="38" FontAttributes="Bold" FontFamily="Open Sans" HorizontalOptions="Center" Opacity="100" />
-            </StackLayout>
+                <StackLayout BackgroundColor="#0071BD" HeightRequest="316" WidthRequest="375">
 
-            <StackLayout >
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="168"/>
-                            <RowDefinition Height="82"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                        <ColumnDefinition  Width="*" />
-                    </Grid.ColumnDefinitions>
+                    <StackLayout WidthRequest="375" HeightRequest="40" Margin="56,50,56,100" >
+                        <Label Text="BG Mobil" TextColor="white" FontSize="38" FontAttributes="Bold" FontFamily="Open Sans" HorizontalOptions="Center" Opacity="100" />
+                    </StackLayout>
 
-                                                
-                        <Frame Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" BackgroundColor="White" HasShadow="true" CornerRadius="5" Margin="68,10" BorderColor="Azure" HeightRequest="250">
-                        <StackLayout VerticalOptions="EndAndExpand">
-                            <Label Text="Min Profil" HorizontalOptions="Center" FontFamily="Open Sans" FontSize="16" FontAttributes="Bold" TextColor="#163E59" Padding="10,10"></Label>
-                            <Label Text="Bent A. Høgset" HorizontalOptions="Center" FontFamily="Open Sans" FontSize="12" FontAttributes="Bold" TextColor="#252626"></Label>
-                            <Label Text="System developer / 100%" HorizontalOptions="Center"  FontFamily="Open Sans" FontSize="12"  TextColor="#252626"></Label>
-                            <Label Text="Visma Enterprise" HorizontalOptions="Center"  FontFamily="Open Sans" FontSize="12" TextColor="#252626"></Label>
-                        </StackLayout>
-                        </Frame>
-                        <Image VerticalOptions="Start" HorizontalOptions="Center" Grid.Row="0" Grid.Column="0"  Source="user" HeightRequest="168" WidthRequest="168" Margin="48,-45"/>
-                </Grid>
+                    <StackLayout >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="168"/>
+                                <RowDefinition Height="82"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition  Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Frame Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" BackgroundColor="White" HasShadow="true" CornerRadius="5" Margin="68,10" BorderColor="Azure" HeightRequest="250">
+                                <StackLayout VerticalOptions="EndAndExpand">
+                                    <Label Text="Min Profil" HorizontalOptions="Center" FontFamily="Open Sans" FontSize="16" FontAttributes="Bold" TextColor="#163E59" Padding="10,10"></Label>
+                                    <Label Text="Bent A. Høgset" HorizontalOptions="Center" FontFamily="Open Sans" FontSize="12" FontAttributes="Bold" TextColor="#252626"></Label>
+                                    <Label Text="System developer / 100%" HorizontalOptions="Center"  FontFamily="Open Sans" FontSize="12"  TextColor="#252626"></Label>
+                                    <Label Text="Visma Enterprise" HorizontalOptions="Center"  FontFamily="Open Sans" FontSize="12" TextColor="#252626"></Label>
+                                </StackLayout>
+                            </Frame>
+                            <Image VerticalOptions="StartAndExpand" HorizontalOptions="Center" Grid.Row="0" Grid.Column="0"  Source="profile" HeightRequest="168" WidthRequest="168" Margin="48,-45"/>
+                        </Grid>
+                    </StackLayout>
                 </StackLayout>
 
+                <StackLayout Margin="25,150" >
 
-                <!--<StackLayout WidthRequest="248" HeightRequest="250" BackgroundColor="white" VerticalOptions="FillAndExpand" Margin="68,30,68,20" >
+                    <Frame CornerRadius="5" BackgroundColor="White" HasShadow="true" Margin="0,10" Padding="20">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Vacation_Clicked"></TapGestureRecognizer>
+                        </Frame.GestureRecognizers>
 
-                        <StackLayout VerticalOptions="StartAndExpand"  Margin="48,-45">
-                            <Image Aspect="AspectFit" Source="user" WidthRequest="168" HeightRequest="160"></Image>
-                        </StackLayout>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions >
+                                <ColumnDefinition  Width="2*" />
+                                <ColumnDefinition  Width="auto"  />
+                                <ColumnDefinition  Width="2*" />
+                            </Grid.ColumnDefinitions>
 
-                    
-                        <StackLayout VerticalOptions="EndAndExpand" Margin="0,20">
-                            <Label Text="Min Profil" HorizontalOptions="Center" FontFamily="Open Sans" FontSize="16" FontAttributes="Bold" TextColor="#163E59" Padding="10,10"></Label>
-                            <Label Text="Bent A. Høgset" HorizontalOptions="Center" FontFamily="Open Sans" FontSize="12" FontAttributes="Bold" TextColor="#252626"></Label>
-                            <Label Text="System developer / 100%" HorizontalOptions="Center"  FontFamily="Open Sans" FontSize="12"  TextColor="#252626"></Label>
-                            <Label Text="Visma Enterprise" HorizontalOptions="Center"  FontFamily="Open Sans" FontSize="12" TextColor="#252626"></Label>
-                        </StackLayout>
-                </StackLayout>-->
- 
-                <StackLayout Orientation="Horizontal">
-                <local:app_button LabelText="Vacation"></local:app_button>
-                <local:app_button LabelText="Holiday"></local:app_button>
+                            
+                            <Image Source="lonn" Grid.Column="0" WidthRequest="24" HeightRequest="18" HorizontalOptions="Start"></Image>
+                            <StackLayout Spacing="0">
+                                <Label Text="Lønn" Grid.Column="1" TextColor="#163E59" FontSize="14" FontFamily="Arial" FontAttributes="None" WidthRequest="235" HeightRequest="16" HorizontalOptions="StartAndExpand" Margin="30,0,0,0"></Label>
+                            </StackLayout>
+                            <Image Source="arrow" Grid.Column="2" WidthRequest="24" HeightRequest="18" HorizontalOptions="EndAndExpand"></Image>
+                            
+                        </Grid>
+                    </Frame>
+
+                    <Frame CornerRadius="5" BackgroundColor="White" HasShadow="true" Margin="0,10" Padding="20" >
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Vacation_Clicked"></TapGestureRecognizer>
+                        </Frame.GestureRecognizers>
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions >
+                                <ColumnDefinition  Width="2*" />
+                                <ColumnDefinition  Width="auto"  />
+                                <ColumnDefinition  Width="2*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="reise" Grid.Column="0" WidthRequest="24" HeightRequest="18" HorizontalOptions="Start"></Image>
+                            <StackLayout Spacing="0">
+                                <Label Text="Reiseregning" Grid.Column="1" TextColor="#163E59" FontSize="14" FontFamily="Arial" FontAttributes="None" WidthRequest="235" HeightRequest="16" HorizontalOptions="StartAndExpand" Margin="30,0,0,0"></Label>
+                            </StackLayout>
+                            <Image Source="arrow" Grid.Column="2" WidthRequest="24" HeightRequest="18" HorizontalOptions="EndAndExpand"></Image>
+                        </Grid>
+                    </Frame>
+
+
+                    <Frame CornerRadius="5" BackgroundColor="White" HasShadow="true" Margin="0,10" Padding="20" >
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Vacation_Clicked"></TapGestureRecognizer>
+                        </Frame.GestureRecognizers>
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions >
+                                <ColumnDefinition  Width="2*" />
+                                <ColumnDefinition  Width="auto"  />
+                                <ColumnDefinition  Width="2*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="vacation" Grid.Column="0" WidthRequest="24" HeightRequest="18" HorizontalOptions="Start"></Image>
+                            <StackLayout Spacing="0">
+                                <Label Text="Ferie" Grid.Column="1" TextColor="#163E59" FontSize="14" FontFamily="Arial" FontAttributes="None" WidthRequest="235" HeightRequest="16" HorizontalOptions="StartAndExpand" Margin="30,0,0,0"></Label>
+                            </StackLayout>
+                            <Image Source="arrow" Grid.Column="2" WidthRequest="24" HeightRequest="18" HorizontalOptions="EndAndExpand"></Image>
+                        </Grid>
+                    </Frame>
+
+                    <Frame CornerRadius="5" BackgroundColor="White" HasShadow="true" Margin="0,10" Padding="20" >
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Vacation_Clicked"></TapGestureRecognizer>
+                        </Frame.GestureRecognizers>
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions >
+                                <ColumnDefinition  Width="2*" />
+                                <ColumnDefinition  Width="auto"  />
+                                <ColumnDefinition  Width="2*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="absence" Grid.Column="0" WidthRequest="24" HeightRequest="18" HorizontalOptions="Start"></Image>
+                            <StackLayout Spacing="0">
+                                <Label Text="Fravær" Grid.Column="1" TextColor="#163E59" FontSize="14" FontFamily="Arial" FontAttributes="None" WidthRequest="235" HeightRequest="16" HorizontalOptions="StartAndExpand" Margin="30,0,0,0"></Label>
+                            </StackLayout>
+                            <Image Source="arrow" Grid.Column="2" WidthRequest="24" HeightRequest="18" HorizontalOptions="EndAndExpand"></Image>
+                        </Grid>
+                    </Frame>
+
+                </StackLayout>
+
             </StackLayout>
 
-            </StackLayout>
-        </StackLayout>
-    </ScrollView>
+        </ScrollView>
+    </ContentPage.Content>
 </ContentPage>
