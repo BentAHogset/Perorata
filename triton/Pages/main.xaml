@@ -43,9 +43,9 @@
                                     <Label Text="Visma Enterprise" HorizontalOptions="Center"  FontFamily="Open Sans" FontSize="12" TextColor="#252626"></Label>
                                 </StackLayout>
                             </Frame>
-                            <Image VerticalOptions="StartAndExpand" HorizontalOptions="Center" Grid.Row="0" Grid.Column="0"  Source="profile" HeightRequest="168" WidthRequest="168" Margin="48,-45" >
+                            <Image VerticalOptions="StartAndExpand" HorizontalOptions="Center" Grid.Row="0" Grid.Column="0"  Source="profile" HeightRequest="168" WidthRequest="168" Margin="48,-45" x:Name="imgProfile">
                                 <Image.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="User_Clicked"></TapGestureRecognizer>
+                                    <TapGestureRecognizer Tapped="User_Clicked" ></TapGestureRecognizer>
                                 </Image.GestureRecognizers>
                             </Image>
                         </Grid>
