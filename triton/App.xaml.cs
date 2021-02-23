@@ -2,6 +2,7 @@
 using System;
 using triton.Kernels;
 using triton.Pages;
+using triton.Rest;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

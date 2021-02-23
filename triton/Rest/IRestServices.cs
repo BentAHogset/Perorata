@@ -8,5 +8,6 @@ namespace triton.Rest
     public interface IRestServices
     {
         Task<ConfigDTO> GetConfig();
+        Task<List<MenuDTO>> GetMenuItems();
     }
 }

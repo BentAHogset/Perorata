@@ -8,28 +8,17 @@ using System.Threading.Tasks;
 namespace triton.Rest
 {
     
-    public class RestServices : IRestServices
+    public class RestServices : RestServiceBase, IRestServices
     {
-        private HttpClient _client;
-
-        public RestServices()
+        public async Task<List<MenuDTO>> GetMenuItems()
         {
-            _client = new HttpClient();
+            return await GetResultFromRestApi<List<MenuDTO>>("api/MenuApi/GetMenu");
         }
 
         public async Task<ConfigDTO> GetConfig()
         {
-            var uriConfig = "http://10.220.124.79:90/api/NativeConfig/GetConfig";
-            HttpResponseMessage response = await _client.GetAsync(uriConfig);
-            if (response.IsSuccessStatusCode)
-            {
-                string content = await response.Content.ReadAsStringAsync();
-                var items = JsonConvert.DeserializeObject<ConfigDTO>(content);
-                return items;
-            }
-            return null;
+            return await GetResultFromRestApi<ConfigDTO>("api/NativeConfig/GetConfig");
         }
-
-       
+      
     }
 }
