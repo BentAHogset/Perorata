@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using triton.Providers;
+using triton.Rest;
 using triton.Services;
 
 namespace triton.Kernels
@@ -12,6 +13,7 @@ namespace triton.Kernels
         {
             Bind<IVacationService>().To<VacationService>();
             Bind<IVacationProvider>().To<VacationProvider>();
+            Bind<IRestServices>().To<RestServices>();
 
         }
     }

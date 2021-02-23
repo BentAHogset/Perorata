@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ninject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,9 +14,6 @@ namespace triton.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class main : ContentPage
     {
-        private RestServices restServices = new RestServices();
-
-        public ConfigDTO configs;
 
         public main()
         {
@@ -27,7 +25,8 @@ namespace triton.Pages
 
         private async void GetConfigs()
         {
-          configs = await restServices.GetConfig();
+            var restServices = App.Kernel.Get<IRestServices>();
+            App.Configs = await restServices.GetConfig();
         }
 
         private void Vacation_Clicked(object sender, EventArgs e)

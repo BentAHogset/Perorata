@@ -21,16 +21,24 @@ namespace triton
 
             Kernel = new StandardKernel(settings, new CommonModule());
 
+            
 
             //MainPage = new MainPage();
             MainPage = new NavigationPage(new main());
 
 
         }
+        
 
         public static Ninject.IKernel Kernel
         {
             get;
+            set;
+        }
+
+        public static ConfigDTO Configs 
+        {
+            get; 
             set;
         }
 

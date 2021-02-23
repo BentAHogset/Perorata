@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace triton.Rest
 {
     
-    public class RestServices 
+    public class RestServices : IRestServices
     {
         private HttpClient _client;
 
@@ -30,6 +30,6 @@ namespace triton.Rest
             return null;
         }
 
-
+       
     }
 }
