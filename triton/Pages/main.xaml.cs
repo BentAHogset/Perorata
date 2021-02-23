@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using triton.Rest;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,10 +13,21 @@ namespace triton.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class main : ContentPage
     {
+        private RestServices restServices = new RestServices();
+
+        public ConfigDTO configs;
 
         public main()
         {
             InitializeComponent();
+
+            GetConfigs();
+            
+        }
+
+        private async void GetConfigs()
+        {
+          configs = await restServices.GetConfig();
         }
 
         private void Vacation_Clicked(object sender, EventArgs e)
