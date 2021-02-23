@@ -19,6 +19,42 @@ namespace triton.Rest
             };
         }
 
+        public async Task<T> GetMockedMenuData<T>()
+        {
+            var list = new List<MenuDTO>
+            {
+                new MenuDTO
+                {
+                    ActionCount = 2,
+                    Icon = "icon--absence",
+                    MenuId = "MENU_SYKEFRAVÆR",
+                    Name = "Fravær",
+                    Url = "/absence/"
+                },
+
+                new MenuDTO
+                {
+                    ActionCount = 1,
+                    Icon = "icon--vacation",
+                    MenuId = "MENU_FERIE",
+                    Name = "Ferie",
+                    Url = "/vacation/"
+                },
+
+                new MenuDTO
+                {
+                    ActionCount = 1,
+                    Icon = "icon--travel",
+                    MenuId = "MENU_REISEREGNIGN",
+                    Name = "Reiseregning",
+                    Url = "/Expenses/"
+                }
+            };
+
+            var content = JsonConvert.SerializeObject(list);
+            return DeserializeJson<T>(content);
+        }
+
         public async Task<T> GetResultFromRestApi<T>(string api)
         {
             var response = await client.GetAsync(api);

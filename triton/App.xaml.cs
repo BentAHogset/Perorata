@@ -22,11 +22,7 @@ namespace triton
 
             Kernel = new StandardKernel(settings, new CommonModule());
 
-            
-
-            //MainPage = new MainPage();
             MainPage = new NavigationPage(new main());
-
 
         }
         

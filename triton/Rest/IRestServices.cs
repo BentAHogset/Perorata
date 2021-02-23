@@ -9,5 +9,7 @@ namespace triton.Rest
     {
         Task<ConfigDTO> GetConfig();
         Task<List<MenuDTO>> GetMenuItems();
+
+        Task<List<MenuDTO>> GetMenuItemsMocked();
     }
 }

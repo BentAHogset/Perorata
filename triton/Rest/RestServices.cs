@@ -10,6 +10,12 @@ namespace triton.Rest
     
     public class RestServices : RestServiceBase, IRestServices
     {
+
+        public async Task<List<MenuDTO>> GetMenuItemsMocked()
+        {
+            return await GetMockedMenuData<List<MenuDTO>>();
+        }
+
         public async Task<List<MenuDTO>> GetMenuItems()
         {
             return await GetResultFromRestApi<List<MenuDTO>>("api/MenuApi/GetMenu");

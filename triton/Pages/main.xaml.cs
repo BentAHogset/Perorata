@@ -20,6 +20,8 @@ namespace triton.Pages
             InitializeComponent();
 
             GetConfigs();
+
+            
             
         }
 
@@ -27,6 +29,9 @@ namespace triton.Pages
         {
             var restServices = App.Kernel.Get<IRestServices>();
             App.Configs = await restServices.GetConfig();
+
+
+            var menus = await restServices.GetMenuItemsMocked();
         }
 
         private void Vacation_Clicked(object sender, EventArgs e)
