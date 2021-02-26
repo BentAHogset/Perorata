@@ -27,36 +27,36 @@ namespace triton.Pages
             var restServices = App.Kernel.Get<IRestServices>();
 
             var isAuthorized = await restServices.IsAuthorized();
+            Console.WriteLine("User authenticated " + isAuthorized);
             if (isAuthorized)
             {
                 App.Configs = await restServices.GetConfig();
-                Console.WriteLine("Config fra DB: " + App.Configs.ConfigList.Count());
+                Console.WriteLine("Config from db: " + App.Configs.ConfigList.Count());
 
                 var menusMocked = restServices.GetMenuItemsMocked();
-                Console.WriteLine("Menypunkter mocked: " + menusMocked.Count());
+                Console.WriteLine("Menu items mocked: " + menusMocked.Count());
 
                 try
                 {
                     var menusFromDb = await restServices.GetMenuItems();
                     if (menusFromDb != null)
                     {
-                        Console.WriteLine("Menypunkter fra DB: " + menusFromDb.Count());
+                        Console.WriteLine("Menu items from db: " + menusFromDb.Count());
                     }
                     else
                     {
-                        Console.WriteLine("Menypunkter fra DB: 0");
+                        Console.WriteLine("Menu items from db: 0");
                     }
                 }
                 catch(Exception e)
                 {
-                    Console.WriteLine("Menypunkter fra DB feil: " + e.Message);
+                    Console.WriteLine("Menu items from db fails: " + e.Message);
                 }
             }
         }
 
         private void Vacation_Clicked(object sender, EventArgs e)
         {
-
             Navigation.PushAsync(new vacation());
         }
 
@@ -69,6 +69,12 @@ namespace triton.Pages
         {
             imgProfile.Source = "profile_touched";
             Navigation.PushAsync(new userprofile());
+
+            // Hack - should be a toggler
+            Device.StartTimer(TimeSpan.FromMilliseconds(500), () => {
+                imgProfile.Source = "profile";
+                return true;
+            });
         }
     }
 }
