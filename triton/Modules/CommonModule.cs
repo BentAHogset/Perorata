@@ -14,6 +14,7 @@ namespace triton.Kernels
             Bind<IVacationService>().To<VacationService>();
             Bind<IVacationProvider>().To<VacationProvider>();
             Bind<IRestServices>().To<RestServices>();
+            Bind<IClientProvider>().To<ClientProvider>();
 
         }
     }

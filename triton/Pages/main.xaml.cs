@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -18,20 +19,39 @@ namespace triton.Pages
         public main()
         {
             InitializeComponent();
-
-            GetConfigs();
-
-            
-            
+            GetDataSources();
         }
 
-        private async void GetConfigs()
+        private async void GetDataSources()
         {
             var restServices = App.Kernel.Get<IRestServices>();
-            App.Configs = await restServices.GetConfig();
 
+            var isAuthorized = await restServices.IsAuthorized();
+            if (isAuthorized)
+            {
+                App.Configs = await restServices.GetConfig();
+                Console.WriteLine("Config fra DB: " + App.Configs.ConfigList.Count());
 
-            var menus = await restServices.GetMenuItemsMocked();
+                var menusMocked = restServices.GetMenuItemsMocked();
+                Console.WriteLine("Menypunkter mocked: " + menusMocked.Count());
+
+                try
+                {
+                    var menusFromDb = await restServices.GetMenuItems();
+                    if (menusFromDb != null)
+                    {
+                        Console.WriteLine("Menypunkter fra DB: " + menusFromDb.Count());
+                    }
+                    else
+                    {
+                        Console.WriteLine("Menypunkter fra DB: 0");
+                    }
+                }
+                catch(Exception e)
+                {
+                    Console.WriteLine("Menypunkter fra DB feil: " + e.Message);
+                }
+            }
         }
 
         private void Vacation_Clicked(object sender, EventArgs e)

@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,17 +10,47 @@ namespace triton.Rest
 {
     public class RestServiceBase
     {
-        protected HttpClient client;
+        private readonly IClientProvider _clientProvider;
 
-        public RestServiceBase()
+        public RestServiceBase(IClientProvider clientProvider)
         {
-            client = new HttpClient
-            {
-                BaseAddress = new Uri("http://10.220.124.79:90")
-            };
+            _clientProvider = clientProvider;
         }
 
-        public async Task<T> GetMockedMenuData<T>()
+        public async Task<bool> IsAuthorized()
+        {
+            if(!_clientProvider.IsAuthorized)
+            {
+                return await _clientProvider.Authorize();
+                
+            }
+            return _clientProvider.IsAuthorized;
+        }
+
+        
+
+        public async Task<T> GetResultFromRestApi<T>(string api)
+        {
+            var response = await _clientProvider.Client.GetAsync(api);
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                return DeserializeJson<T>(content);
+            }
+            return DeserializeJson<T>("");
+        }
+
+        private T DeserializeJson<T>(string json)
+        {
+            if (!string.IsNullOrEmpty(json))
+            {
+                return JsonConvert.DeserializeObject<T>(json);
+            }
+            return JsonConvert.DeserializeObject<T>("");
+        }
+
+
+        public T GetMockedMenuData<T>()
         {
             var list = new List<MenuDTO>
             {
@@ -53,26 +84,6 @@ namespace triton.Rest
 
             var content = JsonConvert.SerializeObject(list);
             return DeserializeJson<T>(content);
-        }
-
-        public async Task<T> GetResultFromRestApi<T>(string api)
-        {
-            var response = await client.GetAsync(api);
-            if (response.IsSuccessStatusCode)
-            {
-                var content = await response.Content.ReadAsStringAsync();
-                return DeserializeJson<T>(content);
-            }
-            return DeserializeJson<T>("");
-        }
-
-        private T DeserializeJson<T>(string json)
-        {
-            if (!string.IsNullOrEmpty(json))
-            {
-                return JsonConvert.DeserializeObject<T>(json);
-            }
-            return JsonConvert.DeserializeObject<T>("");
         }
     }
 }
