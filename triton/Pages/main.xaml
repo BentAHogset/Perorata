@@ -19,9 +19,9 @@
 
             <StackLayout BackgroundColor="#D9DCDE" VerticalOptions="Fill">
 
-                <StackLayout BackgroundColor="#0071BD" HeightRequest="316" WidthRequest="375">
+                <StackLayout BackgroundColor="#0071BD" HeightRequest="290" WidthRequest="375">
 
-                    <StackLayout WidthRequest="375" HeightRequest="40" Margin="56,50,56,100" >
+                    <StackLayout WidthRequest="375" HeightRequest="40" Margin="56,50,56,75" >
                         <Label Text="BG Mobil" TextColor="white" FontSize="38" FontAttributes="Bold" FontFamily="Open Sans" HorizontalOptions="Center" Opacity="100" />
                     </StackLayout>
 

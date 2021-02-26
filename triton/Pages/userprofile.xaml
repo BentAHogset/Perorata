@@ -1,12 +1,75 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="triton.Pages.userprofile">
+             x:Class="triton.Pages.userprofile"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Padding>
+        <OnPlatform 
+            x:TypeArguments="Thickness"
+            Android ="0,0,0,0" 
+            iOS="0,20,0,0" >
+        </OnPlatform>
+    </ContentPage.Padding>
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="User"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView x:Name="scrollview_main" Orientation="Vertical" VerticalOptions="FillAndExpand"  VerticalScrollBarVisibility="Default" BackgroundColor="White">
+
+            <StackLayout BackgroundColor="#D9DCDE" VerticalOptions="Fill">
+
+                <StackLayout BackgroundColor="#0071BD" HeightRequest="290" WidthRequest="375">
+
+                    <StackLayout WidthRequest="375" HeightRequest="40" Margin="56,50,56,75" >
+                        <Label Text="Min Profil" TextColor="white" FontSize="38" FontAttributes="Bold" FontFamily="Open Sans" HorizontalOptions="Center" Opacity="100" />
+                    </StackLayout>
+
+                    <StackLayout >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="168"/>
+                                <RowDefinition Height="82"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition  Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image VerticalOptions="StartAndExpand" HorizontalOptions="Center" Grid.Row="0" Grid.Column="0"  Source="user_profile" HeightRequest="168" WidthRequest="168" Margin="48,-45" x:Name="imgProfile">
+                            </Image>
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout Margin="25,10" >
+
+                    <Frame CornerRadius="5" BackgroundColor="White" HasShadow="true" Margin="0,10" Padding="20">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Closed_clicked"></TapGestureRecognizer>
+                        </Frame.GestureRecognizers>
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions >
+                                <ColumnDefinition  Width="2*" />
+                                <ColumnDefinition  Width="auto"  />
+                                <ColumnDefinition  Width="2*" />
+                            </Grid.ColumnDefinitions>
+
+
+                            <Image Source="lonn" Grid.Column="0" WidthRequest="24" HeightRequest="18" HorizontalOptions="Start"></Image>
+                            <StackLayout Spacing="0">
+                                <Label Text="Lukk" Grid.Column="1" TextColor="#163E59" FontSize="14" FontFamily="Arial" FontAttributes="None" WidthRequest="235" HeightRequest="16" HorizontalOptions="StartAndExpand" Margin="30,0,0,0"></Label>
+                            </StackLayout>
+                            <Image Source="arrow" Grid.Column="2" WidthRequest="24" HeightRequest="18" HorizontalOptions="EndAndExpand"></Image>
+
+                        </Grid>
+                    </Frame>
+
+                </StackLayout>
+
+            </StackLayout>
+
+        </ScrollView>
     </ContentPage.Content>
+
 </ContentPage>

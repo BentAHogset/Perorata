@@ -16,5 +16,10 @@ namespace triton.Pages
         {
             InitializeComponent();
         }
+
+        private void Closed_clicked(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
+        }
     }
 }

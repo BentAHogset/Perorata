@@ -8409,10 +8409,13 @@ namespace triton.Droid
 			public const int tooltip_frame_light = 2131165309;
 			
 			// aapt resource value: 0x7F07007E
-			public const int vacation = 2131165310;
+			public const int user_profile = 2131165310;
 			
 			// aapt resource value: 0x7F07007F
-			public const int xamarin = 2131165311;
+			public const int vacation = 2131165311;
+			
+			// aapt resource value: 0x7F070080
+			public const int xamarin = 2131165312;
 			
 			static Drawable()
 			{
