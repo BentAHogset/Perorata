@@ -22,7 +22,7 @@ namespace triton.Rest
 
             Client = new HttpClient(handler)
             {
-                BaseAddress = new Uri("http://10.220.124.98:90")
+                BaseAddress = new Uri("http://10.220.124.130:90")
             };
         }
 

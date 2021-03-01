@@ -15,6 +15,8 @@ namespace triton
             InitializeComponent();
 
 
+            Device.SetFlags(new string[]{ "Expander_Experimental"});
+
             var settings = new NinjectSettings
             {
                 LoadExtensions = false
