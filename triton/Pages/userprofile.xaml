@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local ="clr-namespace:triton.Views.Controls"
              x:Class="triton.Pages.userprofile"
              x:Name="userProfile"
              NavigationPage.HasNavigationBar="False">
@@ -50,7 +51,7 @@
                             </ListView.ItemTemplate>
 
                         </ListView>-->
-
+                    
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto"/>
@@ -74,7 +75,7 @@
                                             </DataTrigger>
                                         </Image.Triggers>
                                     </Image>
-                                    <Label Grid.Column="1" Text="Testinformasjon" HorizontalOptions="Start" VerticalOptions="Center"/>
+                                    <Label Grid.Column="1" Text="Expander" HorizontalOptions="Start" VerticalOptions="Center"/>
                                 </Grid>
                             </Expander.Header>
 
@@ -165,13 +166,18 @@
                             </Grid>
                         </Frame>
 
-                        
-                        
-                        
 
-                        
 
-                        <!--<ListView x:Name="HotelsList" BackgroundColor="White" IsGroupingEnabled="True" IsPullToRefreshEnabled="true" IsRefreshing="{Binding IsBusy, Mode=OneWay}" ItemsSource="{Binding Items}" RefreshCommand="{Binding LoadHotelsCommand}">
+
+                    <local:accordian AccordianText="Kontaktinformasjon"  Command="{Binding Model.Contact}"></local:accordian>
+
+                    <local:accordian AccordianText="Adresseinformasjon"></local:accordian>
+
+
+
+
+
+                    <!--<ListView x:Name="HotelsList" BackgroundColor="White" IsGroupingEnabled="True" IsPullToRefreshEnabled="true" IsRefreshing="{Binding IsBusy, Mode=OneWay}" ItemsSource="{Binding Items}" RefreshCommand="{Binding LoadHotelsCommand}">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
@@ -200,6 +206,12 @@
 
                     <!--</Grid>-->
                 </StackLayout>
+
+                
+                    
+                    
+                
+                
         </StackLayout>
         </ScrollView>
     </ContentPage.Content>

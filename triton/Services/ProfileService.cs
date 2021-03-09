@@ -14,9 +14,15 @@ namespace triton.Services
             {
                 Contact = new ContactInfo
                 {
-                    Email = "bent.arne@hotmail.com",
-                    Phone = "98222666",
-                    Mobile = "98222666"
+                    Objects = new List<ProfileObject>
+                    {
+                        new ProfileObject { TextValue = "E-post", DataValue = "bent.arne@hotmail.com" },
+                        new ProfileObject { TextValue = "Telefon", DataValue = "98222666" },
+                        new ProfileObject { TextValue = "Mobil", DataValue = "38086702" },
+                    }
+                    //Email = new ProfileObject { TextValue = "E-post", DataValue = "bent.arne@hotmail.com" },
+                    //Phone = "98222666",
+                    //Mobile = "98222666"
                 },
                 Address = new AddressInfo
                 { 

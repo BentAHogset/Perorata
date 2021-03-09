@@ -4,6 +4,12 @@ using System.Text;
 
 namespace triton.Models
 {
+    public class ProfileObject
+    {
+        public string TextValue { get; set; }
+        public string DataValue { get; set; }
+    }
+
     public class ProfileModel
     {
         public PersonInfo Person { get; set; }
@@ -31,12 +37,18 @@ namespace triton.Models
     {
     }
 
+
+    //public class ContactInfo
+    //{
+    //    public ProfileObject Email { get; set; }
+    //    public string Mobile { get; set; }
+    //    public string Phone { get; set; }
+
+    //}
+
     public class ContactInfo
     {
-        public string Email { get; set; }
-        public string Mobile { get; set; }
-        public string Phone { get; set; }
-
+        public List<ProfileObject> Objects { get; set; }
     }
 
     public class AddressInfo
