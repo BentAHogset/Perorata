@@ -176,7 +176,7 @@
                     <Label Text="{Binding Model.ContactInfo[0].TextValue}"></Label>
                     <Label Text="{Binding Model.ContactInfo[0].DataValue}"></Label>
 
-                    <local:AccordionList x:Name="accordionListView" TestItems="{Binding Model.ContactInfo}" ></local:AccordionList>
+                    <local:AccordionList x:Name="accordionListView" ListNameText="Tester" TestItems="{Binding Model.ContactInfo}" ></local:AccordionList>
 
 
 

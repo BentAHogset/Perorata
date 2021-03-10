@@ -21,9 +21,9 @@
                 <ListView x:Name="dynamicList" VerticalOptions="FillAndExpand">
                     <ListView.Header>
                         <StackLayout Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="White">
-                            <Image Source="arrow_down" WidthRequest="14" />
-                            <!--<Label x:Name="Name"  />-->
-                            <Label Text="{Binding TestItems[0]}"></Label>
+                            <!--<Image Source="arrow_down" WidthRequest="14" />-->
+                            <Label x:Name="lblHeader" TextColor="black"/>
+                            
                         </StackLayout>
                     </ListView.Header>
                     <ListView.ItemTemplate>

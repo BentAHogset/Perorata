@@ -19,13 +19,7 @@ namespace triton.Views.Controls
         public AccordionList()
         {
             InitializeComponent();
-            BindingContext = this;
-           
-            
-            //dynamicList.SetBinding(ListView.ItemsSourceProperty, new Binding("LineItems"));
-
-            //dynamicList.SetBinding(ListView.ItemsSourceProperty, new Binding("LineItems", source: this));
-            //dynamicList.BindingContext = LineItems;
+            //BindingContext = this;
         }
 
         //public static readonly BindableProperty LineItemsProperty = BindableProperty.Create("LineItems",
@@ -75,19 +69,7 @@ namespace triton.Views.Controls
 
 
 
-        //public string ListNameText { get; set; }
 
-        //public static readonly BindableProperty ListName = BindableProperty.Create(nameof(ListNameText),
-        //    typeof(string),
-        //    typeof(AccordionList),
-        //    defaultBindingMode: BindingMode.OneWay,
-        //    propertyChanged: ListNameChanged);
-
-        //public static void ListNameChanged(BindableObject bindable, object oldValue, object newValue)
-        //{
-        //    var control = (AccordionList)bindable;
-        //    control.Name.Text = newValue?.ToString();
-        //}
 
 
 
@@ -208,6 +190,22 @@ namespace triton.Views.Controls
 
         //public static readonly BindableProperty TestItemsProperty =
         //   BindableProperty.Create(nameof(TestItems), typeof(ObservableCollection<TestModel>), typeof(TestControl), default);
+
+        public string ListNameText { get; set; }
+
+        private static BindableProperty ListNameTextProperty = BindableProperty.Create(
+            propertyName: nameof(ListNameText),
+            returnType: typeof(string),
+            declaringType: typeof(AccordionList),
+            defaultValue: "",
+            defaultBindingMode: BindingMode.TwoWay,
+            propertyChanged: ListNameTextChanged);
+
+        private static void ListNameTextChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            var control = (AccordionList)bindable;
+            control.lblHeader.Text = newValue.ToString();
+        }
 
         public ObservableCollection<ProfileObject> TestItems
         {

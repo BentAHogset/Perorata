@@ -20,7 +20,6 @@ namespace triton.Pages
         {
             InitializeComponent();
             var profileProvider = App.Kernel.Get<IProfileProvider>();
-            Contacts = new ObservableCollection<ProfileObject>(profileProvider.GetModel().ContactInfo);
             BindingContext = new ProfileViewModel(profileProvider);
         }
 
@@ -42,18 +41,18 @@ namespace triton.Pages
             }
         }
 
-        private ObservableCollection<ProfileObject> _contacts;
-        public ObservableCollection<ProfileObject> Contacts
-        {
-            get
-            {
-                return _contacts;
-            }
-            set
-            {
-                _contacts = value;
+        //private ObservableCollection<ProfileObject> _contacts;
+        //public ObservableCollection<ProfileObject> Contacts
+        //{
+        //    get
+        //    {
+        //        return _contacts;
+        //    }
+        //    set
+        //    {
+        //        _contacts = value;
 
-            }
-        }
+        //    }
+        //}
     }
 }
