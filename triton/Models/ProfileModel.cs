@@ -1,28 +1,52 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace triton.Models
 {
-    public class ProfileObject
-    {
+    public class ProfileObject 
+    { 
         public string TextValue { get; set; }
         public string DataValue { get; set; }
     }
 
-    public class ProfileModel
+    public class ProfileModel : INotifyPropertyChanged
     {
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public PersonInfo Person { get; set; }
 
         public AddressInfo Address { get; set; }
 
-        public ContactInfo Contact { get; set; }
+
+        private List<ProfileObject> contactInfo;
+        public List<ProfileObject> ContactInfo
+        {
+            get
+            {
+                return contactInfo;
+            }
+            set
+            {
+                contactInfo = value;
+                NotifyPropertyChanged();
+            }
+        }
 
         public List<TaxInfo> Tax { get; set; }
 
         public List<AccountInfo> Account { get; set; }
 
         public List<FamilyInfo> Family { get; set; }
+
+        
     }
 
     public class AccountInfo
@@ -38,20 +62,7 @@ namespace triton.Models
     }
 
 
-    //public class ContactInfo
-    //{
-    //    public ProfileObject Email { get; set; }
-    //    public string Mobile { get; set; }
-    //    public string Phone { get; set; }
-
-    //}
-
-    public class ContactInfo
-    {
-        public List<ProfileObject> Objects { get; set; }
-    }
-
-    public class AddressInfo
+     public class AddressInfo
     {
         public string Address1 { get; set; }
         public string Address2 { get; set; }

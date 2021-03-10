@@ -9,6 +9,11 @@
                 HorizontalOptions="CenterAndExpand" />
 
             <ListView x:Name="historicAbsence" >
+                <ListView.Header>
+                    <StackLayout>
+                        <Label Text="Navn"></Label>
+                    </StackLayout>
+                </ListView.Header>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Detail="{Binding}" Text="Name" TextColor="Teal"  DetailColor="Black"/>

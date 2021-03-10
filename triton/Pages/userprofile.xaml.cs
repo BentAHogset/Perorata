@@ -1,9 +1,11 @@
 ﻿using Ninject;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using triton.Models;
 using triton.Providers;
 using triton.ViewModels;
 using Xamarin.Forms;
@@ -18,6 +20,7 @@ namespace triton.Pages
         {
             InitializeComponent();
             var profileProvider = App.Kernel.Get<IProfileProvider>();
+            Contacts = new ObservableCollection<ProfileObject>(profileProvider.GetModel().ContactInfo);
             BindingContext = new ProfileViewModel(profileProvider);
         }
 
@@ -36,6 +39,20 @@ namespace triton.Pages
             else
             {
                 img.Source = "arrow_down";
+            }
+        }
+
+        private ObservableCollection<ProfileObject> _contacts;
+        public ObservableCollection<ProfileObject> Contacts
+        {
+            get
+            {
+                return _contacts;
+            }
+            set
+            {
+                _contacts = value;
+
             }
         }
     }

@@ -169,11 +169,14 @@
 
 
 
-                    <local:accordian AccordianText="Kontaktinformasjon"  Command="{Binding Model.Contact}"></local:accordian>
+                    <!--<local:accordian AccordianText="Kontaktinformasjon"  Command="{Binding Model.Contact}"></local:accordian>
 
-                    <local:accordian AccordianText="Adresseinformasjon"></local:accordian>
+                    <local:accordian AccordianText="Adresseinformasjon"></local:accordian>-->
 
+                    <Label Text="{Binding Model.ContactInfo[0].TextValue}"></Label>
+                    <Label Text="{Binding Model.ContactInfo[0].DataValue}"></Label>
 
+                    <local:AccordionList x:Name="accordionListView" TestItems="{Binding Model.ContactInfo}" ></local:AccordionList>
 
 
 
