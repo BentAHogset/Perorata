@@ -6,8 +6,8 @@ using System.Text;
 
 namespace triton.Models
 {
-    public class ProfileObject 
-    { 
+    public class ProfileObject
+    {
         public string TextValue { get; set; }
         public string DataValue { get; set; }
     }
@@ -18,12 +18,39 @@ namespace triton.Models
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        
+
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public PersonInfo Person { get; set; }
+        private List<ProfileObject> personInfo { get; set; }
+        public List<ProfileObject> PersonInfo
+        {
 
-        public AddressInfo Address { get; set; }
+            get
+            {
+                return personInfo;
+            }
+            set
+            {
+                personInfo = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+
+        private List<ProfileObject> addressInfo;
+        public List<ProfileObject> AddressInfo
+        {
+            get
+            {
+                return addressInfo;
+            }
+            set
+            {
+                addressInfo = value;
+                NotifyPropertyChanged();
+            }
+
+        }
 
 
         private List<ProfileObject> contactInfo;
@@ -46,7 +73,7 @@ namespace triton.Models
 
         public List<FamilyInfo> Family { get; set; }
 
-        
+
     }
 
     public class AccountInfo
@@ -60,25 +87,6 @@ namespace triton.Models
     public class FamilyInfo
     {
     }
-
-
-     public class AddressInfo
-    {
-        public string Address1 { get; set; }
-        public string Address2 { get; set; }
-
-        public string ZipCode { get; set; }
-        public string City { get; set; }
-        public string Country { get; set; }
-
-    }
 }
 
-    public class PersonInfo
-    {
-        public string EmployeeNumber { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string BirthDate { get; set; }
-
-    }
+   

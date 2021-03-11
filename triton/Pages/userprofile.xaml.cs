@@ -30,18 +30,18 @@ namespace triton.Pages
             Navigation.PopAsync();
         }
 
-        private void Toggle_user(object sender, EventArgs e)
-        {
-            expand.IsVisible = !expand.IsVisible;
-            if(expand.IsVisible)
-            {
-                img.Source = "arrow_up";
-            }
-            else
-            {
-                img.Source = "arrow_down";
-            }
-        }
+        //private void Toggle_user(object sender, EventArgs e)
+        //{
+        //    expand.IsVisible = !expand.IsVisible;
+        //    if(expand.IsVisible)
+        //    {
+        //        img.Source = "arrow_up";
+        //    }
+        //    else
+        //    {
+        //        img.Source = "arrow_down";
+        //    }
+        //}
 
         //private ObservableCollection<ProfileObject> _contacts;
         //public ObservableCollection<ProfileObject> Contacts
