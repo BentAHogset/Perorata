@@ -17,9 +17,9 @@
     <ContentPage.Content>
         <ScrollView x:Name="scrollview_main" Orientation="Vertical" VerticalOptions="FillAndExpand"  VerticalScrollBarVisibility="Default" BackgroundColor="White">
 
-            <StackLayout BackgroundColor="#F0F2F5" VerticalOptions="Fill">
+            <StackLayout BackgroundColor="{StaticResource MainBackgroundColor}" VerticalOptions="Fill">
 
-                <StackLayout BackgroundColor="#0071BD" HeightRequest="290" WidthRequest="375">
+                <StackLayout BackgroundColor="{StaticResource OverlayBackgroundColor}" HeightRequest="290" WidthRequest="375">
 
                     <StackLayout WidthRequest="375" HeightRequest="40" Margin="56,50,56,75" >
                         <Label Text="BG Mobil" TextColor="white" FontSize="38" FontAttributes="Bold" FontFamily="Open Sans" HorizontalOptions="Center" Opacity="100" />

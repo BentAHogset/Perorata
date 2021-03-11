@@ -17,7 +17,7 @@
                             <RowDefinition Height="auto"/>
                         </Grid.RowDefinitions>
                         <Image x:Name="imgToggle" Grid.Column="0" WidthRequest="14" />
-                        <Label x:Name="lblHeader" Grid.Column="1" TextColor="#0060A1" FontSize="14" FontFamily="Open Sans" FontAttributes="Bold"/>
+                        <Label x:Name="lblHeader" Grid.Column="1" Style="{StaticResource AccordionHeaderStyle}"/>
                         <Grid.GestureRecognizers>
                             <TapGestureRecognizer Tapped="ToggleCollapse"></TapGestureRecognizer> 
                         </Grid.GestureRecognizers>
@@ -31,8 +31,8 @@
                             <ViewCell>
                                 <ViewCell.View>
                                     <StackLayout Orientation="Vertical" Padding="30,0" >
-                                        <Label Text="{Binding TextValue}" TextColor="#737373" FontSize="12" FontFamily="Open Sans"></Label>
-                                        <Label Text="{Binding DataValue}" TextColor="#282828" FontSize="12" FontFamily="Open Sans" FontAttributes="Bold"></Label>
+                                    <Label Text="{Binding TextValue}" Style="{StaticResource AccordionLabelStyle}"></Label>
+                                    <Label Text="{Binding DataValue}" Style="{StaticResource AccordionValueStyle}"></Label>
                                     </StackLayout>
                                 </ViewCell.View>
                             </ViewCell>

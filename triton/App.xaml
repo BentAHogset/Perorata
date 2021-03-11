@@ -8,5 +8,33 @@
             <On Platform="Android" Value="iconmoon-bluegarden.ttf"/>
         </OnPlatform>
 
+        <ResourceDictionary>
+            <Color x:Key="MainBackgroundColor">#F0F2F5</Color>
+            <Color x:Key="OverlayBackgroundColor">#0071BD</Color>
+            <Color x:Key="HeaderColor">#0060A1</Color>
+            <Color x:Key="LabelTextColor">#737373</Color>
+            <Color x:Key="ValueTextColor">#282828</Color>
+            
+            <Style x:Key="AccordionHeaderStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource HeaderColor}"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="FontFamily" Value="Open Sans"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+
+            <Style x:Key="AccordionLabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource LabelTextColor}"/>
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="FontFamily" Value="Open Sans"/>
+            </Style>
+            
+            <Style x:Key="AccordionValueStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource ValueTextColor}"/>
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="FontFamily" Value="Open Sans"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+        </ResourceDictionary>
+        
     </Application.Resources>
 </Application>
