@@ -20,7 +20,9 @@ namespace triton.Pages
         {
             InitializeComponent();
             var profileProvider = App.Kernel.Get<IProfileProvider>();
-            BindingContext = new ProfileViewModel(profileProvider);
+            var model = new ProfileViewModel(profileProvider);
+
+            Content.BindingContext = model;
         }
 
         private void Closed_clicked(object sender, EventArgs e)

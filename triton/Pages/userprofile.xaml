@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local ="clr-namespace:triton.Views.Controls"
              x:Class="triton.Pages.userprofile"
-             x:Name="userProfile"
              NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Padding>
@@ -167,16 +166,19 @@
                         </Frame>
 
 
-
+                    <local:BgButton ButtonText="Lukk" Command="{Binding CloseCommand}" CommandParameter="{Binding .}"></local:BgButton>
 
                     <!--<local:accordian AccordianText="Kontaktinformasjon"  Command="{Binding Model.Contact}"></local:accordian>
 
                     <local:accordian AccordianText="Adresseinformasjon"></local:accordian>-->
 
-                    <Label Text="{Binding Model.ContactInfo[0].TextValue}"></Label>
+                    <!--<Label Text="{Binding Model.ContactInfo[0].TextValue}"></Label>
                     <Label Text="{Binding Model.ContactInfo[0].DataValue}"></Label>
-
-                    <local:AccordionList x:Name="accordionListView" ListNameText="Tester" TestItems="{Binding Model.ContactInfo}" ></local:AccordionList>
+                        -->
+                
+                
+                    <local:AccordionList x:Name="accordionContactInfo" ListNameText="Kontaktinformasjon" ListItems="{Binding Model.ContactInfo}"></local:AccordionList>
+                    <local:AccordionList x:Name="accordionAddressInfo" ListNameText="Adresseinformasjon" ListItems="{Binding Model.ContactInfo}"></local:AccordionList>
 
 
 
