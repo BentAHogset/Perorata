@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:triton.Pages"
+       Title="Triton"
+        x:Class="triton.AppShell">
+
+    <FlyoutItem Title="BG Mobil" Icon="icon_feed.png">
+        <ShellContent Route="main" ContentTemplate="{DataTemplate local:main}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Profil" Icon="icon_about.png">
+        <ShellContent Route="userprofile" ContentTemplate="{DataTemplate local:userprofile}" />
+    </FlyoutItem>
+
+    <!--<MenuItem Text="Logout" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">
+    </MenuItem>
+
+    <TabBar>
+        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:vacation}" />
+    </TabBar>-->
+
+</Shell>

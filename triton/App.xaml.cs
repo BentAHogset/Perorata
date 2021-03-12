@@ -15,7 +15,9 @@ namespace triton
             InitializeComponent();
 
 
-            Device.SetFlags(new string[]{ "Expander_Experimental"});
+            Device.SetFlags(new string[] { "Expander_Experimental", "Shell_UWP_Experimental" });
+            //global::Xamarin.Forms.Forms.SetFlags("Shell_UWP_Experimental");
+            //Device.SetFlags(new string[] { "Shell_UWP_Experimental" });
 
             var settings = new NinjectSettings
             {
@@ -24,7 +26,8 @@ namespace triton
 
             Kernel = new StandardKernel(settings, new CommonModule());
 
-            MainPage = new NavigationPage(new main());
+            //MainPage = new NavigationPage(new main());
+            MainPage = new AppShell();
 
         }
         
