@@ -59,18 +59,30 @@ namespace triton.Views.Controls
             returnType: typeof(IEnumerable),
             declaringType: typeof(ListView),
             defaultValue: new ObservableCollection<ProfileObject>(),
-            propertyChanged: TestItemsChanged);
-        
-        static void TestItemsChanged(BindableObject bindable, object oldValue, object newValue)
+            propertyChanged: ListItemsChanged);
+
+
+        static void ListItemsChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var items = (List<ProfileObject>)newValue;
             if (items != null)
             {
                 var control = (AccordionList)bindable;
-                control.dynamicList.ItemsSource = items;
-                control.dynamicList.HeightRequest = 45 * items.Count;
+                BindableLayout.SetItemsSource(control.dynamicList, items);
             }
         }
+
+
+        //static void ListItemsChanged(BindableObject bindable, object oldValue, object newValue)
+        //{
+        //    var items = (List<ProfileObject>)newValue;
+        //    if (items != null)
+        //    {
+        //        var control = (AccordionList)bindable;
+        //        control.dynamicList.ItemsSource = items;
+        //        control.dynamicList.HeightRequest = 45 * items.Count;
+        //    }
+        //}
 
         private bool _collapsed = true;
         public bool Collapsed {

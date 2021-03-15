@@ -22,7 +22,7 @@ namespace triton
 
         private async void OnMenuItemClicked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("vacation");
+            await Shell.Current.GoToAsync("//vacation");
            //await Navigation.PushAsync(new vacation());
         }
     }

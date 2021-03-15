@@ -16,8 +16,6 @@ namespace triton
 
 
             Device.SetFlags(new string[] { "Expander_Experimental", "Shell_UWP_Experimental" });
-            //global::Xamarin.Forms.Forms.SetFlags("Shell_UWP_Experimental");
-            //Device.SetFlags(new string[] { "Shell_UWP_Experimental" });
 
             var settings = new NinjectSettings
             {
