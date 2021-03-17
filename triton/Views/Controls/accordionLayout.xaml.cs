@@ -12,9 +12,9 @@ using Xamarin.Forms.Xaml;
 namespace triton.Views.Controls
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AccordionList : ContentView
+    public partial class AccordionLayout : ContentView
     {
-        public AccordionList()
+        public AccordionLayout()
         {
             InitializeComponent();
             SetToggleProperties();
@@ -22,8 +22,7 @@ namespace triton.Views.Controls
 
         private void SetToggleProperties()
         {
-            dynamicList.IsVisible = !Collapsed;
-
+            accordionList.IsVisible = !Collapsed;
             var imgSource = Collapsed ? "arrow_down" : "arrow_up";
             imgToggle.Source = imgSource;
         }
@@ -44,7 +43,7 @@ namespace triton.Views.Controls
 
         private static void ListNameTextChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            var control = (AccordionList)bindable;
+            var control = (AccordionLayout)bindable;
             control.lblHeader.Text = newValue as String;
         }
 
@@ -62,17 +61,16 @@ namespace triton.Views.Controls
             propertyChanged: ListItemsChanged);
 
 
-
         static void ListItemsChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var items = (List<ProfileObject>)newValue;
             if (items != null)
             {
-                var control = (AccordionList)bindable;
-                control.dynamicList.ItemsSource = items;
-                control.dynamicList.HeightRequest = 45 * items.Count;
+                var control = (AccordionLayout)bindable;
+                BindableLayout.SetItemsSource(control.accordionList, items);
             }
         }
+       
 
         private bool _collapsed = true;
         public bool Collapsed {

@@ -18,6 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\Controls\accordionLayout.xaml.cs">
+      <DependentUpon>accordionLayout.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Controls\BgButton.xaml.cs">
       <DependentUpon>BgButton.xaml</DependentUpon>
     </Compile>
@@ -37,6 +40,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Controls\accordionList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Controls\accordionListGrouped.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Controls\app-button.xaml">

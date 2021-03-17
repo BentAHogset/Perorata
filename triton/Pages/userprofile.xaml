@@ -135,7 +135,9 @@
                 
                     <local:AccordionList x:Name="accordionContactInfo" ListNameText="Kontaktinformasjon" ListItems="{Binding Model.ContactInfo}"></local:AccordionList>
                     <local:AccordionList x:Name="accordionAddressInfo" ListNameText="Adresseinformasjon" ListItems="{Binding Model.AddressInfo}"></local:AccordionList>
-                    <local:AccordionList x:Name="accordionPersonInfo"  ListNameText="Personinformasjon"  ListItems="{Binding Model.PersonInfo}"></local:AccordionList>
+                    <local:AccordionLayout x:Name="accordionPersonInfo"  ListNameText="Personinformasjon"  ListItems="{Binding Model.PersonInfo}"></local:AccordionLayout>
+
+                    <local:AccordionListGrouped x:Name="accordionInfo" ListItems ="{Binding Model.UserInfo}"></local:AccordionListGrouped>
 
 
 

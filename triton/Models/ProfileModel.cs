@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -20,6 +21,10 @@ namespace triton.Models
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+
+
+
 
         private List<ProfileObject> personInfo { get; set; }
         public List<ProfileObject> PersonInfo
@@ -74,6 +79,9 @@ namespace triton.Models
         public List<FamilyInfo> Family { get; set; }
 
 
+        public List<UserProfile> UserInfo { get; set; }
+
+
     }
 
     public class AccountInfo
@@ -86,6 +94,40 @@ namespace triton.Models
 
     public class FamilyInfo
     {
+    }
+
+    public class UserProfile : ObservableCollection<ProfileObject>, INotifyPropertyChanged
+    {
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private bool _isExpanded;
+        public bool IsExpanded
+        {
+            get
+            {
+                return _isExpanded;
+            }
+            set
+            {
+                _isExpanded = value;
+                NotifyPropertyChanged();
+            }
+        }
+        public string Heading { get; set; }
+        //public List<ProfileObject> Items { get; private set; }
+        
+        //public UserProfile(string heading, List<ProfileObject> items)
+        //{
+        //    Heading = heading;
+        //    Items = items;
+           
+        //}
+
     }
 }
 

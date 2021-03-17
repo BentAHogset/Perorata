@@ -23,6 +23,7 @@ namespace triton.Pages
         {
             base.OnAppearing();
             historicAbsence.ItemsSource = new List<string> { "Bent", "Heidi", "Magdalena", "Jonas","Benjamin","Berglind" };
+            historicAbsence2.ItemsSource = new List<string> { "Bent", "Heidi"};
         }
     }
 }

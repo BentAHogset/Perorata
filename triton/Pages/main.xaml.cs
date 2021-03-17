@@ -26,7 +26,7 @@ namespace triton.Pages
         {
             var restServices = App.Kernel.Get<IRestServices>();
 
-            var isAuthorized = await restServices.IsAuthorized();
+            var isAuthorized = false;// await restServices.IsAuthorized();
             Console.WriteLine("User authenticated " + isAuthorized);
             if (isAuthorized)
             {

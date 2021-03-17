@@ -8,7 +8,34 @@
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
 
-            <ListView x:Name="historicAbsence" >
+            <!--<Label Text="Test list static"></Label>
+            <ListView x:Name="List" HasUnevenRows="True" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Grid Padding="10,10,10,10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="ABC:-" FontSize="20" TextColor="Black" Grid.Column="0" Grid.Row ="0"/>
+                                    <Label Text="{Binding ABC}" FontSize="20" TextColor="Black" Grid.Column="1" Grid.Row ="0" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                                    <Label Text="XYZ:-" FontSize="20" TextColor="Black" Grid.Column="0" Grid.Row ="1"/>
+                                    <Label Text="{Binding XYZ}" FontSize="20" TextColor="Black" Grid.Column="1" Grid.Row ="1" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+
+            <Label Text="Test list source 1"></Label>
+            <ListView x:Name="historicAbsence" HasUnevenRows="True">
                 <ListView.Header>
                     <StackLayout>
                         <Label Text="Navn"></Label>
@@ -20,7 +47,22 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <ActivityIndicator IsRunning="true"></ActivityIndicator>
+
+            <Label Text="Test list source 2"></Label>
+            <ListView x:Name="historicAbsence2" HasUnevenRows="True">
+                <ListView.Header>
+                    <StackLayout>
+                        <Label Text="Navn"></Label>
+                    </StackLayout>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Detail="{Binding}" Text="Name" TextColor="Teal"  DetailColor="Black"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!--<ActivityIndicator IsRunning="true"></ActivityIndicator>-->
         </StackLayout>
         
         

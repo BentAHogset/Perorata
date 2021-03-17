@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="triton.Views.Controls.AccordionList">
+             x:Class="triton.Views.Controls.AccordionLayout">
     <ContentView.Content>
         
       
@@ -25,20 +25,19 @@
                 </StackLayout>
                 </Frame>
 
-            <ListView x:Name="dynamicList">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <StackLayout Orientation="Vertical" Padding="30,0" >
-                                    <Label Text="{Binding TextValue}" Style="{StaticResource AccordionLabelStyle}"></Label>
-                                    <Label Text="{Binding DataValue}" Style="{StaticResource AccordionValueStyle}"></Label>
-                                </StackLayout>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+
+                <StackLayout x:Name="accordionList">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Orientation="Vertical" Margin="20,5">
+                                <Label Text="{Binding TextValue}" Style="{StaticResource AccordionLabelStyle}"></Label>
+                                <Label Text="{Binding DataValue}" Style="{StaticResource AccordionValueStyle}"></Label>
+                                <BoxView Style="{StaticResource AccordionSeparatorStyle}"></BoxView>
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+
         </StackLayout>
         
     </ContentView.Content>
