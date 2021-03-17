@@ -85,10 +85,10 @@ namespace triton.Views.Controls
         
         }
 
-        private void ToggleCollapse(object sender, EventArgs e)
+        private void ToggleAccordion(object sender, EventArgs e)
         {
             Collapsed = !Collapsed;
             SetToggleProperties();
-        }
+        }       
     }
 }

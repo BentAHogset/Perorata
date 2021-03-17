@@ -87,7 +87,15 @@ namespace triton.Services
             model.UserInfo = groupList;
 
 
-            
+            var userInfomation = new UserProfile { Heading = "Informasjon", IsExpanded = false };
+            userInfomation.Add(new ProfileObject { TextValue = "Adresse", DataValue = "Grostølveien 6" });
+            userInfomation.Add(new ProfileObject { TextValue = "Postnummer", DataValue = "4634" });
+            userInfomation.Add(new ProfileObject { TextValue = "Sted", DataValue = "Kristiansand S" });
+            userInfomation.Add(new ProfileObject { TextValue = "Land", DataValue = "Norge" });
+
+            model.UserInfomation = userInfomation;
+
+
 
             return model;
 

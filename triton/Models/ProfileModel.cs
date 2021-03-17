@@ -82,6 +82,9 @@ namespace triton.Models
         public List<UserProfile> UserInfo { get; set; }
 
 
+        public UserProfile UserInfomation { get; set; }
+
+
     }
 
     public class AccountInfo

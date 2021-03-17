@@ -37,10 +37,10 @@
                 </StackLayout>
             </StackLayout>
                 
-            <StackLayout Margin="0,-15">
+            <StackLayout Margin="0,10">
 
-                                     
-                    <!--<Grid>
+            <!-- EXPANDER-->                                     
+                    <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto"/>
                             <RowDefinition Height="auto"/>
@@ -48,7 +48,7 @@
 
                         <Expander Grid.Row="0">
                             <Expander.Header>
-                                <Grid BackgroundColor="White">
+                                <Grid BackgroundColor="White" Margin="0,10">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="auto"/>
                                     </Grid.RowDefinitions>
@@ -78,10 +78,10 @@
                                         </Grid.ColumnDefinitions>
                                         <StackLayout Orientation="Vertical"  Margin="35,0">
                                             <Label Text="E-post"/>
-                                            <Label Text="{Binding Model.Contact.Email}" TextColor="Black" />
+                                            <Label Text="{Binding Model.ContactInfo.DataValue}" TextColor="Black" />
 
                                             <Label Text="Mobil"/>
-                                            <Label Text="{Binding Model.Contact.Mobile}" TextColor="Black"/>
+                                            <Label Text="dd" TextColor="Black"/>
 
                                             <Label Text="Telefon"/>
                                             <Label Text="{Binding Model.Contact.Phone}" TextColor="Black"/>
@@ -92,7 +92,8 @@
                             </Expander.ContentTemplate>
 
                         </Expander>
-                    </Grid>-->
+                    </Grid>
+                    
 
                     <!--<Frame BackgroundColor="White" HasShadow="true" x:Name="contact">
                             <Frame.GestureRecognizers>
@@ -137,8 +138,13 @@
                     <local:AccordionList x:Name="accordionAddressInfo" ListNameText="Adresseinformasjon" ListItems="{Binding Model.AddressInfo}"></local:AccordionList>
                     <local:AccordionLayout x:Name="accordionPersonInfo"  ListNameText="Personinformasjon"  ListItems="{Binding Model.PersonInfo}"></local:AccordionLayout>
 
+                    <!--<local:AccordionLayout x:Name="accordionTestInfo"  ListNameText="Personinformasjon"  ListItems="{Binding Model.UserInfomation}"></local:AccordionLayout>-->
+
+                    
+
                     <local:AccordionListGrouped x:Name="accordionInfo" ListItems ="{Binding Model.UserInfo}"></local:AccordionListGrouped>
 
+                    
 
 
                     <Frame CornerRadius="5" BackgroundColor="White" HasShadow="true" Margin="0,10" Padding="20">

@@ -19,14 +19,14 @@
                         <Image x:Name="imgToggle" Grid.Column="0" WidthRequest="14" />
                         <Label x:Name="lblHeader" Grid.Column="1" Style="{StaticResource AccordionHeaderStyle}"/>
                         <Grid.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="ToggleCollapse"></TapGestureRecognizer> 
+                            <TapGestureRecognizer Tapped="ToggleAccordion"></TapGestureRecognizer> 
                         </Grid.GestureRecognizers>
                     </Grid>
                 </StackLayout>
                 </Frame>
 
 
-                <StackLayout x:Name="accordionList">
+            <StackLayout x:Name="accordionList">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Orientation="Vertical" Margin="20,5">
