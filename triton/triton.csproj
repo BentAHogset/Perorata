@@ -18,6 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\Controls\accordionLayoutList.xaml.cs">
+      <DependentUpon>accordionLayoutList.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Controls\accordionLayout.xaml.cs">
       <DependentUpon>accordionLayout.xaml</DependentUpon>
     </Compile>
