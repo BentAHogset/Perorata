@@ -89,6 +89,16 @@ namespace triton.Views.Controls
         {
             ListItems.IsExpanded = !ListItems.IsExpanded;
             SetToggleProperties();
-        }       
+        }
+
+        private void accordionList_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            //if (e.PropertyName != "IsVisible") return;
+            //var viewModel = (StackLayout)sender;
+            //if(!viewModel.IsVisible)
+            //    viewModel.FadeTo(0, 5000);
+            //if (viewModel.IsVisible)
+            //    viewModel.FadeTo(5000, 0);
+        }
     }
 }

@@ -31,9 +31,18 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition  Width="*" />
                         </Grid.ColumnDefinitions>
-                        <Image VerticalOptions="StartAndExpand" HorizontalOptions="Center" Grid.Row="0" Grid.Column="0"  Source="user_profile" HeightRequest="168" WidthRequest="168" Margin="48,-45" x:Name="imgProfile">
-                        </Image>
-                    </Grid>
+
+                            <StackLayout  Margin="48,-45" Spacing="0">
+                                <Frame Padding="0" CornerRadius="100" IsClippedToBounds="True" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" HasShadow="true" HeightRequest="152" WidthRequest="152">
+                                    <Image HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" Source="user_profile" x:Name="imgProfile" HeightRequest="300" WidthRequest="300">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                                </Image.GestureRecognizers>
+                                </Image>
+                            </Frame>
+                            </StackLayout>
+
+                        </Grid>
                 </StackLayout>
             </StackLayout>
                 

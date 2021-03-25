@@ -1,4 +1,5 @@
 ﻿using Ninject;
+using Plugin.Media;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -30,5 +31,35 @@ namespace triton.Pages
             Navigation.PopAsync();
         }
 
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new PhotoPage());
+
+
+            //await CrossMedia.Current.Initialize();
+
+            //if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+            //{
+            //    Console.WriteLine("No Camera", ":( No camera available.", "OK");
+            //    return;
+            //}
+
+            //var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+            //{
+            //    Directory = "Sample",
+            //    Name = "test.jpg"
+
+
+            //});
+
+            //if (file == null) return;
+
+            //imgProfile.Source = ImageSource.FromStream(() =>
+            //{
+            //    var stream = file.GetStream();
+            //    return stream;
+            //});
+
+        }
     }
 }

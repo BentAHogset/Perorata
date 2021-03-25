@@ -28,7 +28,7 @@
 
             <Label x:Name="kdlf" Text="{Binding Headings}"></Label>
 
-                <StackLayout x:Name="accordionList">
+                <StackLayout x:Name="accordionList" PropertyChanged="accordionList_PropertyChanged">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Orientation="Vertical" Margin="20,5">

@@ -28,7 +28,7 @@ namespace triton
             MainPage = new AppShell();
 
         }
-        
+
 
         public static Ninject.IKernel Kernel
         {
@@ -36,15 +36,15 @@ namespace triton
             set;
         }
 
-        public static ConfigDTO Configs 
+        public static ConfigDTO Configs
         {
-            get; 
+            get;
             set;
         }
 
         protected override void OnStart()
         {
-            
+
         }
 
         protected override void OnSleep()
@@ -54,5 +54,7 @@ namespace triton
         protected override void OnResume()
         {
         }
+
     }
 }
+
