@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Runtime.CompilerServices;
 using System.Text;
 
@@ -23,8 +24,17 @@ namespace triton.Models
         public event PropertyChangedEventHandler PropertyChanged;
 
 
-
-
+        private string _profilePicture;
+        public string ProfilePicture {
+            get {
+                return _profilePicture; 
+            }
+            set 
+            {
+                _profilePicture = value;
+                NotifyPropertyChanged();
+            }
+        }
 
         private List<ProfileObject> personInfo { get; set; }
         public List<ProfileObject> PersonInfo

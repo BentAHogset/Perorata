@@ -17,13 +17,15 @@ namespace triton.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class userprofile : ContentPage
     {
+       
+        public ProfileViewModel Model { get; set; }
         public userprofile()
         {
             InitializeComponent();
             var profileProvider = App.Kernel.Get<IProfileProvider>();
-            var model = new ProfileViewModel(profileProvider);
+            Model = new ProfileViewModel(profileProvider);
 
-            Content.BindingContext = model;
+            Content.BindingContext = Model;
         }
 
         private void Closed_clicked(object sender, EventArgs e)
@@ -33,7 +35,7 @@ namespace triton.Pages
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new PhotoPage());
+            Navigation.PushModalAsync(new PhotoPage(Model));
 
 
             //await CrossMedia.Current.Initialize();
