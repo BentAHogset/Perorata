@@ -13,9 +13,11 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="Ninject" Version="3.3.4" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.14" />
     <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+    <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.759" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,6 +37,9 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Pages\absence.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\MyPopupTest.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\PhotoPage.xaml">

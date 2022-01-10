@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local ="clr-namespace:triton.Views.Controls"
              x:Class="triton.Pages.vacation"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="False"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
 
     <!--xmlns:local="clr-namespace:triton.ViewModels"-->
     
@@ -13,6 +14,9 @@
 
     <ContentPage.Content>
 
+        
+
+
         <ScrollView 
                  x:Name="ScoreScrollView" Orientation="Vertical"
                             VerticalOptions="FillAndExpand"
@@ -20,6 +24,11 @@
                             BackgroundColor="White">
 
             <StackLayout VerticalOptions="FillAndExpand">
+
+                <pancake:PancakeView BackgroundColor="#000000" CornerRadius="20,60,60,20" HorizontalOptions="FillAndExpand" HeightRequest="35" Margin="10">
+                    <Button BackgroundColor="Black" Text="Volla" TextColor="white" TextTransform="None" />
+                </pancake:PancakeView>
+
                 <Frame BackgroundColor="#137CA9" Padding="24" CornerRadius="0">
                     <Label Text="HR Portalen" HorizontalTextAlignment="Center" TextColor="White" FontSize="25"/>
                 </Frame>

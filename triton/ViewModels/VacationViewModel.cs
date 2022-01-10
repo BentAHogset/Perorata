@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 using System.Windows.Input;
+using Rg.Plugins.Popup.Extensions;
+using Rg.Plugins.Popup.Pages;
 using triton.Models;
+using triton.Pages;
 using triton.Providers;
 using triton.Services;
 using Xamarin.Forms;
@@ -60,7 +63,10 @@ namespace triton.ViewModels
 
             CloseCommand = new Command(() =>
             {
-                Navigate.PopAsync();
+                //Navigate.PopAsync();
+                //Navigate.PopModalAsync()
+                //Rg.Plugins.Popup.Popup.Init();
+                Navigate.PushPopupAsync(new MyPopupTest());
             });
         }
       
