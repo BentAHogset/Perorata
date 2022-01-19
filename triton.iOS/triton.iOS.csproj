@@ -66,6 +66,7 @@
     <AppExtensionDebugBundleId />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Controls\DropDownRenderer.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
@@ -118,6 +119,10 @@
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="FPT.Framework.iOS.UI.Dropdown, Version=1.0.6191.20582, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\FPT.Framework.iOS.UI.Dropdown.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -144,5 +149,8 @@
       <Project>{F1043E54-F747-464E-AE6B-6084C50102DB}</Project>
       <Name>triton</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FPT.Framework.iOS.UI.Dropdown.dll" />
   </ItemGroup>
 </Project>

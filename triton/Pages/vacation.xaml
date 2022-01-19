@@ -4,7 +4,8 @@
              xmlns:local ="clr-namespace:triton.Views.Controls"
              x:Class="triton.Pages.vacation"
              NavigationPage.HasNavigationBar="False"
-             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView">
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:controls="clr-namespace:triton.Controls;assembly=triton">
 
     <!--xmlns:local="clr-namespace:triton.ViewModels"-->
     
@@ -29,11 +30,17 @@
                     <Button BackgroundColor="Black" Text="Volla" TextColor="white" TextTransform="None" />
                 </pancake:PancakeView>
 
-                <Frame BackgroundColor="#137CA9" Padding="24" CornerRadius="0">
+                
                     <Label Text="HR Portalen" HorizontalTextAlignment="Center" TextColor="White" FontSize="25"/>
-                </Frame>
+                
 
-
+                    
+                    <controls:DropDown HorizontalOptions="FillAndExpand"  
+                                       VerticalOptions="Center"  
+                                       BackgroundColor="#CECECE"
+                                       Margin="2"
+                                       x:Name="DropDown"/>
+                    
 
                 <Label x:Name="title" Text="{Binding Model.Title}" FontSize="22" Padding="30,10,30,10"/>
 

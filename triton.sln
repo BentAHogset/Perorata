@@ -7,7 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "triton.Android", "triton.An
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "triton.iOS", "triton.iOS\triton.iOS.csproj", "{86C90564-73A5-403A-979D-024D339953CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "triton", "triton\triton.csproj", "{463F9E41-5747-4702-B520-E9FC4FDFC88E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "triton", "triton\triton.csproj", "{463F9E41-5747-4702-B520-E9FC4FDFC88E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{6B171363-A64D-474E-97F7-272478B31B82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
