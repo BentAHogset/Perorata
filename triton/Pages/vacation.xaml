@@ -33,14 +33,16 @@
                 
                     <Label Text="HR Portalen" HorizontalTextAlignment="Center" TextColor="White" FontSize="25"/>
                 
-
+                    
                     
                     <controls:DropDown HorizontalOptions="FillAndExpand"  
                                        VerticalOptions="Center"  
                                        BackgroundColor="#CECECE"
                                        Margin="2"
                                        x:Name="DropDown"/>
-                    
+
+                    <controls:SuperEntry/>
+
 
                 <Label x:Name="title" Text="{Binding Model.Title}" FontSize="22" Padding="30,10,30,10"/>
 
