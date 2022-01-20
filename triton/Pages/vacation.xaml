@@ -38,11 +38,11 @@
                     <controls:DropDown HorizontalOptions="FillAndExpand"  
                                        VerticalOptions="Center"  
                                        BackgroundColor="#CECECE"
-                                       Margin="2"
+                                       Margin="10,0"
                                        x:Name="DropDown"/>
 
                     
-                    <controls:SuperEntry/>
+                    <controls:TextBox Text ="{Binding Model.Title}" Title="En tittel" IconImage="edit.png"/>
 
                     <Entry Placeholder="Skriv noe"></Entry>
 

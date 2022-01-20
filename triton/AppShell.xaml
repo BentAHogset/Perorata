@@ -9,7 +9,7 @@
         <ShellContent Route="main" ContentTemplate="{DataTemplate local:main}" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Profil" Icon="icon_about.png">
+    <FlyoutItem Title="Profil">
         <ShellContent Route="userprofile" ContentTemplate="{DataTemplate local:userprofile}" />
     </FlyoutItem>
 
