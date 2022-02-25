@@ -13,8 +13,8 @@ namespace triton.Controls
     public class TextBox : StackLayout
     {
         private readonly Frame _frmBackground = new Frame { BackgroundColor = Color.White, CornerRadius = (float)3, BorderColor = Color.LightGray, Padding = new Thickness(10, 0, 0, 0), HasShadow = false, Margin= new Thickness(10,0,10,0)};
-        private readonly Label _lblTitle = new Label { Margin = new Thickness(6, 0, 0, 0), IsVisible = true, LineBreakMode = LineBreakMode.TailTruncation};
-        private readonly Image _imgIcon = new Image { InputTransparent = true, IsVisible = true, Margin = new Thickness(5, 10, 10, 10), VerticalOptions = LayoutOptions.CenterAndExpand, HeightRequest = 30, BackgroundColor=Color.FromHex("#FFFFFF")};
+        private readonly Label _lblTitle = new Label { Margin = new Thickness(6, 0, 0, 0), IsVisible = false, LineBreakMode = LineBreakMode.TailTruncation};
+        private readonly Image _imgIcon = new Image { InputTransparent = true, IsVisible = false, Margin = new Thickness(5, 10, 10, 10), VerticalOptions = LayoutOptions.CenterAndExpand, HeightRequest = 35, BackgroundColor=Color.Transparent};
         private readonly Entry _txtInput;
 
         public TextBox()
@@ -35,7 +35,7 @@ namespace triton.Controls
                     {
                         Orientation = StackOrientation.Horizontal,
                         BackgroundColor = Color.Transparent,
-
+                        
                         Children =
                         {
                             _txtInput,
@@ -49,6 +49,7 @@ namespace triton.Controls
         private void TxtInput_TextChanged(object sender, TextChangedEventArgs e)
         {
             SetValue(TextProperty, _txtInput.Text);
+            _imgIcon.IsVisible = string.IsNullOrEmpty(_txtInput.Text);
         }
 
         private protected Entry GetInputEntry()
@@ -60,6 +61,7 @@ namespace triton.Controls
                 HorizontalOptions = LayoutOptions.FillAndExpand,
                 VerticalOptions = LayoutOptions.Center,
                 BackgroundColor = Color.White,
+                WidthRequest = 100
             };
         }
 

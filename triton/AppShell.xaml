@@ -13,6 +13,10 @@
         <ShellContent Route="userprofile" ContentTemplate="{DataTemplate local:userprofile}" />
     </FlyoutItem>
 
+    <FlyoutItem Title="Test grid">
+        <ShellContent  ContentTemplate="{DataTemplate local:GridPageTest}" />
+    </FlyoutItem>
+
     <!--<MenuItem Text="Logout" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">
     </MenuItem>
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using triton.Providers;
@@ -33,10 +34,11 @@ namespace triton.Pages
                 var photo = await MediaPicker.CapturePhotoAsync();
                 if (photo != null)
                 {
-                    var stream  = await photo.OpenReadAsync();
+                    var stream = await photo.OpenReadAsync();
                     image.Source = ImageSource.FromStream(() => { return stream; });
                     FilePath = photo.FullPath;
                     FileStream = stream;
+                    byte[] bytes = File.ReadAllBytes(FilePath);
                 }
             }
         }
@@ -53,6 +55,20 @@ namespace triton.Pages
             }
             
         }
+
+        private async void GetAPhotoFromDbAsync(object sender, EventArgs e)
+        {
+            var photo = await MediaPicker.PickPhotoAsync();
+            if (photo != null)
+            {
+                byte[] dbPicture = File.ReadAllBytes(photo.FullPath);
+                var memStream = new MemoryStream(dbPicture);
+                image.Source = ImageSource.FromStream(() => { return memStream; });
+                FileStream = memStream;
+            }
+
+        }
+
 
         private void SaveAPhoto(object sender, EventArgs e)
         {

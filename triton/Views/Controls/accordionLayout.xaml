@@ -29,12 +29,14 @@
             <StackLayout x:Name="accordionList">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
+                            
                             <StackLayout Orientation="Vertical" Margin="20,5">
                                 <Label Text="{Binding TextValue}" Style="{StaticResource AccordionLabelStyle}"></Label>
                                 <Label Text="{Binding DataValue}" Style="{StaticResource AccordionValueStyle}"></Label>
                                 <BoxView Style="{StaticResource AccordionSeparatorStyle}"></BoxView>
                             </StackLayout>
-                        </DataTemplate>
+                            
+                    </DataTemplate>
                     </BindableLayout.ItemTemplate>
                 </StackLayout>
 

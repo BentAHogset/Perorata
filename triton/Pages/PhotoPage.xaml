@@ -14,6 +14,7 @@
             <Button Text="Take a picture" Clicked="TakeAPhotoAsync"></Button>
             <Button Text="Locate a picture" Clicked="GetAPhotoAsync"></Button>
             <Button Text="Save picture" Clicked="SaveAPhoto"></Button>
+            <Button Text="Get picture from byte" Clicked="GetAPhotoFromDbAsync"></Button>
             
         </StackLayout>
     </ContentPage.Content>
