@@ -66,11 +66,20 @@ namespace triton.ViewModels
                 //Navigate.PopAsync();
                 //Navigate.PopModalAsync()
                 //Rg.Plugins.Popup.Popup.Init();
-                Navigate.PushPopupAsync(new MyPopupTest());
+                var options = new PopupOptions();
+                options.Margins = new Thickness(20, 20, 20, 0);
+
+                Navigate.PushPopupAsync(new MyPopupTest(options));
             });
         }
       
         public VacationModel Model { get; set; }
         
+    }
+
+
+    public class PopupOptions
+    {
+        public Thickness Margins { get; set; }
     }
 }

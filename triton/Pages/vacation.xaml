@@ -42,7 +42,7 @@
                                        x:Name="DropDown"/>
 
                     
-                    <controls:TextBox Text ="{Binding Model.Title}" Title="En tittel" IconImage="edit.png"/>
+                    <controls:TextBox Text ="{Binding Model.Title}" Title="En tittel" IconImage="edit.png" />
 
                     <Entry Placeholder="Skriv noe"></Entry>
 

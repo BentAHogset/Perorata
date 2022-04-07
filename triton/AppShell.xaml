@@ -17,6 +17,11 @@
         <ShellContent  ContentTemplate="{DataTemplate local:GridPageTest}" />
     </FlyoutItem>
 
+    <FlyoutItem Title="List view">
+        <ShellContent  ContentTemplate="{DataTemplate local:Lists}" />
+    </FlyoutItem>
+
+
     <!--<MenuItem Text="Logout" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">
     </MenuItem>
 
